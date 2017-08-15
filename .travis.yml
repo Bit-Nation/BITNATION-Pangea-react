@@ -1,6 +1,12 @@
 language: node_js
 node_js:
-- iojs
+- 6
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run build
+  - npm test    
 notifications:
   slack:
     secure: rfYfvDqKK34X+RWthojcWbM8LPcCObIaPjSvVfs9W+zeTeJf+3fYHTu7zmZrJlktJYV3f7tx7glGfddHpE6Hz0ig3OB+kL2Jam/18TzmJBAZ1Fpit35tqnciGnUOwAYExmwBzP2CKHNcxaQuhM38HySNJv+yDJwCbI9GdfAzSGIE/KM3RD/W/GiwHmBOlWQwp9oX50HzFqsU8rb2qc86WIn0Qlx2ra+W1aDu5tcK4N5px8TG6pmE8C7YV+j7HJf1mKvrFYX7+ATw7PZUHtu2mxtWOxlpnBW1YnHTW1lBzFoYBvPEERZ6Sitj8KV6L0lxoSnv7z46Efrwoigp76z9PboRHiMf9RGcTG11ti0Y2Iyi11p1dv6d4ivhsqxe8rV8IOE+2BsMuSjI49auawP5MjMcrSq2JuiIgEQeQzBUvzqBLQ0DW3Tbhu8kB/nkVFN5IDdO7HVPrVq/qdv/rSJMDYhXi6pQH0qY9FtksrGorwEwyzhNJ1m9W7yyqn/GUwasU0V5GaoHdmRQHENJagaoCWWK3ezoYb88gA5y2DmS4yfYc6+d69IxHV6nojQ8wTuXgqSWgDLj8l1L+9ntr2oTJ/L5h7PwfQYtmjlEMh1Gk22KyRfHTSI/USGHpmdiTFusI6V7TQLu4ZuxywcSiUyxVIemAzreSbyxh1r0ObpGgcc=
