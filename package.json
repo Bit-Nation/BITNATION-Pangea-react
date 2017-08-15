@@ -2,20 +2,31 @@
   "name": "pangea",
   "version": "0.1.0",
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "expo": "^19.0.1",
+    "react": "^16.0.0-alpha.12",
+    "react-dom": "^16.0.0-alpha.12",
+    "react-native": "0.46.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.11",
+    "react-test-renderer": "^16.0.0-alpha.12",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-native": "react-native-scripts start",
+    "ios": "react-native-scripts ios",
+    "android": "react-native-scripts android",
+    "test-native": "node node_modules/jest/bin/jest.js --watch",
+    "eject-native": "react-native-scripts eject"
   },
   "devDependencies": {
+    "jest": "^20.0.4",
+    "react-native-scripts": "^1.1.0",
     "redux-mock-store": "^1.2.3"
   }
 }
