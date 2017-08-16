@@ -1,12 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import logo from './src/images/logo.png';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Welcome To Bitnation</Text>
-        <Text>Changes you make will automatically reload.</Text>
+        <Image 
+          source={logo}
+        />
+        <Text>The Internet of Sovereignity.</Text>
       </View>
     );
   }

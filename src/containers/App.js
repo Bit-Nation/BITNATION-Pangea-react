@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../images/logo.svg';
+import logo from '../images/logo.png';
 import '../styles/App.css';
 import {APP_STATUS} from '../constants/status_types';
 import { connect } from 'react-redux';
