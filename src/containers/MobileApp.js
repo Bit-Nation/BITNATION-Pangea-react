@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import logo from '../images/logo.png';
+import logo from '../images/logo.jpg';
 
 export default class App extends React.Component {
   render() {
@@ -9,7 +9,6 @@ export default class App extends React.Component {
         <Image 
           source={logo}
         />
-        <Text>The Internet of Sovereignity.</Text>
       </View>
     );
   }
