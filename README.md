@@ -63,4 +63,5 @@ The folder structure is as follwoing:
 ## Development Guidelines
 
   We are following the [Airbnb Guidelines](https://github.com/airbnb/javascript)
-  There is already a *.eslint.json* file containing the specifications, you just need to integrate on your favorite editor.
+  
+  There is already a *.eslint.json* file containing the specifications, you just need to integrate it on your favorite editor.
