@@ -26,7 +26,7 @@ Now you just need to scan the QR-Code using the [Expo app](https://expo.io/) whi
 You can test the mobile app without cloning the repo and/or building the app yourself.
 You can just download the Expo app to your phone: https://expo.io/
 
-Then go to [this](https://expo.io/@danielfranca/bitnation) page and scan the qr-code.
+Then go to [this](https://expo.io/@danielfranca/bitnation) page and scan the QR-Code using the [Expo app](https://expo.io/).
 
 Easy as that, now you can test the app on your phone.
 
