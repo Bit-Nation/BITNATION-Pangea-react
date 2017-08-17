@@ -7,7 +7,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Image 
-          style={{width: 450, height: 500}}
+          style={{width: 450, height: 300}}
           source={logo}
         />
       </View>
