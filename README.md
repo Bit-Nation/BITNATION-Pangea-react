@@ -1,5 +1,8 @@
 # Bitnation Pangea
 
+This is the repository for the Pangea Jurisdiction frontend. 
+
+
 ## Table of Contents
 
 - [Building](#building)
