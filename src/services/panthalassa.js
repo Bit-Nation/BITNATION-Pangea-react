@@ -1,32 +1,33 @@
 
 class PanthalassaApi {
+  constructor() {
+    this.host = 'http://localhost:4001';
+  }
 
-    constructor() {
-        this.host = "http://localhost:4001";
-    }
+  sync() {
+    const endpoint = `${this.host}/v0/sync`;
+    return fetch(endpoint);
+  }
 
-    sync() {
-        const endpoint = `${this.host}/v0/sync`;
-        return fetch(endpoint);
-    }
+  getFeed(username) {
+    // TODO: Add a better error handling
+    // if (!username) {
+    //     throw "Missing required username to get feed";
+    // }
 
-    getFeed(username) {
-        if (!username) {
-            throw "Missing required username to get feed";
-        }
+    const endpoint = `${this.host}/v0/messages/${username}`;
+    return fetch(endpoint);
+  }
 
-        const endpoint = `${this.host}/v0/messages/${username}`;
-        return fetch(endpoint);
-    }
+  getMessage(username, sequence) {
+    // TODO: Add a better error handling
+    // if (!username || !sequence) {
+    //     throw `Missing required username (${username}) or sequence to get feed (${sequence})`;
+    // }
 
-    getMessage(username, sequence) {
-        if (!username || !sequence) {
-            throw `Missing required username (${username}) or sequence to get feed (${sequence})`;
-        }
-
-        const endpoint = `${this.host}/v0/messages/${username}/${sequence}`;
-        return fetch(endpoint);
-    }
+    const endpoint = `${this.host}/v0/messages/${username}/${sequence}`;
+    return fetch(endpoint);
+  }
 }
 
-return new PanthalassaApi()
+export default new PanthalassaApi();

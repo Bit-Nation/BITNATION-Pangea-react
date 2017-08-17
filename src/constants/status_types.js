@@ -1,6 +1,6 @@
 export const APP_STATUS = {
-    INACTIVE: "INACTIVE",
-    STARTING: "STARTING",
+    INACTIVE: 'INACTIVE',
     RUNNING: "RUNNING",
-    BROKEN: "BROKEN"
-}
+    STARTING: 'STARTING',
+    BROKEN: 'BROKEN',
+};

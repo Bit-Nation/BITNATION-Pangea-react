@@ -1,4 +1,4 @@
 export const CORE_ACTIONS = {
-    LOADING: "LOADING",
-    LOADED: "LOADED"
-}
+    LOADING: 'LOADING',
+    LOADED: 'LOADED',
+};

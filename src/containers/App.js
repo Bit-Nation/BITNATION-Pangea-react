@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import logo from '../images/logo.jpg';
 import '../styles/App.css';
-import {APP_STATUS} from '../constants/status_types';
-import { connect } from 'react-redux';
-import {startApp} from '../actions/core'
+import { APP_STATUS } from '../constants/status_types';
+import { startApp } from '../actions/core';
 
 
 class App extends Component {
-
   componentDidMount() {
     this.props.dispatch(startApp());
   }
@@ -30,8 +31,13 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  appStatus: state.core.appStatus
-})
+App.propTypes = {
+  appStatus: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
 
-export default connect(mapStateToProps)(App)
+const mapStateToProps = state => ({
+  appStatus: state.core.appStatus,
+});
+
+export default connect(mapStateToProps)(App);

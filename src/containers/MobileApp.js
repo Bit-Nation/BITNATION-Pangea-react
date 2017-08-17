@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import logo from '../images/logo.jpg';
 
 export default class App extends React.Component {
@@ -23,5 +23,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-//AppRegistry.registerComponent('App', () => App);
