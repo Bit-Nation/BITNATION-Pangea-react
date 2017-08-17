@@ -1,3 +1,11 @@
-import App from './src/containers/MobileApp';
+import React, { Component } from 'react';
 
-export default App;
+import Main from './src/index.mobile';
+
+export default class App extends Component { // eslint-disable-line react/prefer-stateless-function
+  render() {
+    return (
+      <Main />
+    );
+  }
+}
