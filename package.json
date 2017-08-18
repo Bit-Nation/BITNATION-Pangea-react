@@ -17,22 +17,39 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test-web": "node node_modules/jest/bin/jest.js --watch",
     "eject": "react-scripts eject",
     "start-native": "react-native-scripts start",
     "ios": "react-native-scripts ios",
     "android": "react-native-scripts android",
-    "test-native": "node node_modules/jest/bin/jest.js --watch",
+    "test": "node node_modules/jest/bin/jest.js --watch",
     "eject-native": "react-native-scripts eject"
   },
   "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "enzyme": "^2.9.1",
     "eslint": "^4.4.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.2.1",
     "jest": "^20.0.4",
+    "react-native-mock": "^0.3.1",
     "react-native-scripts": "^1.1.0",
     "redux-mock-store": "^1.2.3"
+  },
+  "babel": {
+    "presets": [
+      "react-native"
+    ]
+  },  
+  "jest": {
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    },
+    "unmockedModulePathPatterns": [
+      "node_modules"
+    ],
+    "preset": "react-native"
   }
 }
