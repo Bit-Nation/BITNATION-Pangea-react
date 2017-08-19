@@ -40,13 +40,13 @@ Easy as that, now you can test the app on your phone.
 
 `eject-native`: Eject Native project
 
-`test-native`: Run mobile app tests
+`test`: Run mobile app tests
 
 `start`: Start webserver
 
 `build`: Build and watch app
 
-`test`: Run web app tests
+`test-web`: Run web app tests
 
 `eject`: Eject project
 
