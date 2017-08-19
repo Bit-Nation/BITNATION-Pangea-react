@@ -6,6 +6,7 @@ cache:
     - node_modules
 script:
   - npm run build
+  - npm dedupe
   - npm test    
 notifications:
   slack:
