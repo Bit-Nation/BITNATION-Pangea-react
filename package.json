@@ -22,7 +22,7 @@
     "start-native": "react-native-scripts start",
     "ios": "react-native-scripts ios",
     "android": "react-native-scripts android",
-    "test": "node node_modules/jest/bin/jest.js --watch",
+    "test": "node node_modules/jest/bin/jest.js",
     "eject-native": "react-native-scripts eject"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 language: node_js
+sudo: enabled
 node_js:
 - 6
 cache:
@@ -6,7 +7,6 @@ cache:
     - node_modules
 script:
   - npm run build
-  - npm dedupe
   - npm test    
 notifications:
   slack:
