@@ -2,6 +2,7 @@
   "name": "pangea",
   "version": "0.1.0",
   "dependencies": {
+    "@expo/vector-icons": "^5.1.0",
     "expo": "^19.0.1",
     "prop-types": "^15.5.10",
     "react": "^16.0.0-alpha.12",

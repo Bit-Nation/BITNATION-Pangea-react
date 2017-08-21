@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import thunk from 'redux-thunk';
-import { View, Image, Button } from 'react-native';
+import { View, Image } from 'react-native';
 import { connect, Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import Drawer from 'react-native-drawer';
