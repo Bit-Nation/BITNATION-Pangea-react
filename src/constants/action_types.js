@@ -1,4 +1,9 @@
 export const CORE_ACTIONS = {
-    LOADING: 'LOADING',
-    LOADED: 'LOADED',
+  LOADING: 'LOADING',
+  LOADED: 'LOADED',
+};
+
+export const UI_ACTIONS = {
+  OPEN_DRAWER: 'OPEN_DRAWER',
+  CLOSE_DRAWER: 'CLOSE_DRAWER',
 };

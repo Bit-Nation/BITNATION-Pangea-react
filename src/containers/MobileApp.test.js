@@ -23,6 +23,5 @@ describe('<MobileApp />', () => {
 
     const mobileApp = shallow(<Provider store={store}><MobileApp /></Provider>);
     mobileApp.debug();
-    expect(mobileApp).toMatchSnapshot();
   });
 });
