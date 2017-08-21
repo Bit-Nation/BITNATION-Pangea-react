@@ -9,7 +9,7 @@ export default StyleSheet.create({
   },
   menuButton: {
     position: 'absolute',
-    top: 10,
+    top: 15,
     left: 0,
   },
   mainMenu: {

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import thunk from 'redux-thunk';
-import { Text, View, Image, Button } from 'react-native';
+import { View, Image, Button } from 'react-native';
 import { connect, Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import Drawer from 'react-native-drawer';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import { startApp } from '../actions/core';
-import { APP_STATUS } from '../constants/status_types';
 import MainMenu from '../components/MainMenu';
+
 
 import { openDrawer, closeDrawer } from '../actions/ui';
 
@@ -62,12 +63,12 @@ class MobileApp extends React.Component {
             />
           </View>
           <View style={Styles.menuButton}>
-            <Button
+            <MaterialIcons.Button
+              name="menu"
+              backgroundColor="transparent"
+              color="#010101"
+              size={32}
               onPress={() => this.openMenu()}
-              title="Menu"
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-              flex={1}
             />
           </View>
         </Drawer >
