@@ -7,6 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer } from '../actions/ui';
 import reducer from '../reducers';
+import Main from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 
 
@@ -14,7 +15,6 @@ const store = createStore(
   reducer,
   applyMiddleware(thunk),
 );
-
 
 class MobileApp extends React.Component {
   componentDidMount() {
@@ -32,11 +32,13 @@ class MobileApp extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <WelcomeScreen
+        <Main
           onClosed={() => this.closeMenu()}
           onOpen={() => this.openMenu()}
           isDrawerOpen={this.props.isDrawerOpen}
-        />
+        >
+          <WelcomeScreen />
+        </Main>
       </Provider>
     );
   }
