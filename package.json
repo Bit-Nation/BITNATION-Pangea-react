@@ -19,7 +19,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test-web": "node node_modules/jest/bin/jest.js --watch",
     "eject": "react-scripts eject",
     "start-native": "react-native-scripts start",
     "ios": "react-native-scripts ios",
