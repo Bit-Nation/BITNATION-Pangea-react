@@ -27,6 +27,20 @@ function Main(props) {
           size={32}
           onPress={() => props.onOpen()}
         />
+        <MaterialIcons.Button
+          name="chat"
+          backgroundColor="transparent"
+          color="#010101"
+          size={32}
+          onPress={() => props.onOpen()}
+        />
+        <MaterialIcons.Button
+          name="settings"
+          backgroundColor="transparent"
+          color="#010101"
+          size={32}
+          onPress={() => props.onOpen()}
+        />
       </View>
     </Drawer >
 

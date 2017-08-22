@@ -11,6 +11,8 @@ export default StyleSheet.create({
     position: 'absolute',
     top: 15,
     left: 0,
+    flexDirection: 'row',
+    flex: 1
   },
   mainMenu: {
     backgroundColor: '#ABABAB',
