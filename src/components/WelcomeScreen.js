@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Image } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Styles from '../styles/Styles';
 import logo from '../images/logo.jpg';
 
+import { SCREEN_TYPES } from '../constants/status_types';
 
-function WelcomeScreen() {
+
+function WelcomeScreen(props) {
   return (
     <View
       style={
@@ -13,6 +16,7 @@ function WelcomeScreen() {
           alignItems: 'center',
         }
       }
+      onTouchEnd={() => props.onChangeScreenHandler(SCREEN_TYPES.MAIN)}
     >
       <Image
         style={Styles.logo}
@@ -21,5 +25,9 @@ function WelcomeScreen() {
     </View>
   );
 }
+
+WelcomeScreen.propTypes = {
+  onChangeScreenHandler: PropTypes.func.isRequired,
+};
 
 export default WelcomeScreen;

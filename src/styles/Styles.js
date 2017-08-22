@@ -26,4 +26,9 @@ export default StyleSheet.create({
     width: 300,
     height: 350,
   },
+  home: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

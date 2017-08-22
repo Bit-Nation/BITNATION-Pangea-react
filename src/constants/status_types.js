@@ -4,3 +4,8 @@ export const APP_STATUS = {
   STARTING: 'STARTING',
   BROKEN: 'BROKEN',
 };
+
+export const SCREEN_TYPES = {
+  WELCOME: 'WELCOME',
+  MAIN: 'MAIN',
+};
