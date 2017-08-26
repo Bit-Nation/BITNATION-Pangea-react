@@ -8,10 +8,11 @@ services:
       - ipfs
     tty: true
 
-  node:
+  pangea:
     build: .
     volumes:
       - ./:/src/app
+      - ./node_modules:/src/app/node_modules:cached
     tty: true
     working_dir: "/src/app"
     depends_on:
