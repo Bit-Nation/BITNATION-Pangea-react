@@ -14,12 +14,20 @@ This is the repository for the Pangea Jurisdiction frontend.
 
 ## Building
 
-After clone the repository you can run
-`npm install` to install all dependencies
-and then `npm run start-native`
-It should print a QR-Code.
+We use docker for development, so make sure that you get the latest version (should be at least 17.04).
 
-Now you just need to scan the QR-Code using the [Expo app](https://expo.io/) while connected in the same network as your computer.
+Setup instructions:
+1. Clone the repository
+2. Run ```docker-compose up -d```to build and start all the containers (wil take a few minutes).
+3. Run ```docker-compose exec pangea bash``` to enter into the "pangea" container (it's the container where node is running).
+4. Run ```npm install``` to get all the dependencies.
+5. Run ```npm run start-native``` and wait 2 - 4 minutes. A QR-Code should be printed.
+6. Now you just need to scan the QR-Code using the [Expo app](https://expo.io/) while connected in the same network as your computer.
+
+### Tips and tricks
+* Stop the containers ```docker-compose stop```
+* Destroy the containers ```docker-compose down```
+
 
 ## Testing
 

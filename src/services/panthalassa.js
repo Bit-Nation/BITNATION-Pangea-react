@@ -1,7 +1,7 @@
 
 class PanthalassaApi {
   constructor() {
-    this.host = 'http://localhost:4001';
+    this.host = 'http://panthalassa';
   }
 
   sync() {
