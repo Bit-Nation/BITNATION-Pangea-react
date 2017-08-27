@@ -8,11 +8,25 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   menuButton: {
+    flex: 1,
+  },
+  chatButton: {
+    flex: 1,
+  },
+  settingsButton: {
+    flex: 3,
+  },
+  topBar: {
     position: 'absolute',
     top: 15,
     left: 0,
     flexDirection: 'row',
-    flex: 1
+    flex: 1,
+  },
+  title: {
+    top: 10,
+    fontSize: 20,
+    flex: 3,
   },
   mainMenu: {
     backgroundColor: '#ABABAB',
