@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListView, Text, View } from 'react-native';
+import { ListView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../styles/Styles';
 
@@ -13,7 +13,8 @@ function MainMenu(props) {
       style={styles.mainMenu}
       onTouchEnd={() => props.onClosed()}
       dataSource={dataSource}
-      renderRow={rowData => (<View style={styles.menuItem}><Text>{rowData}</Text></View>)}
+      contentContainerStyle={styles.menuItem}
+      renderRow={rowData => (<Text style={styles.menuText}>{rowData}</Text>)}
     />
   );
 }

@@ -30,11 +30,15 @@ export default StyleSheet.create({
   },
   mainMenu: {
     backgroundColor: '#ABABAB',
-    top: 30,
   },
   menuItem: {
-    marginTop: 10,
-    left: 10,
+    justifyContent: 'center',
+    flex: 1,
+    alignItems: 'center',
+  },
+  menuText: {
+    paddingTop: 15,
+    fontSize: 25,
   },
   logo: {
     top: 100,
