@@ -51,4 +51,26 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  nationsDataItem: {
+    marginTop: 110,
+    marginLeft: 20,
+  },
+  nationsRow: {
+    flexDirection: 'row',
+    paddingTop: 10,
+  },
+  nationsDataLeftText: {
+    fontSize: 25,
+    flex: 3,
+  },
+  nationsDataRightText: {
+    fontSize: 25,
+    flex: 1,
+  },
+  nationsDataSubText: {
+    fontSize: 15,
+  },
+  nationsColumn: {
+    flexDirection: 'column',
+  },
 });

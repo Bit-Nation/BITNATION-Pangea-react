@@ -2,11 +2,37 @@ import React from 'react';
 import { ListView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../styles/Styles';
+import { SCREEN_TYPES } from '../constants/status_types';
 
 
 function MainMenu(props) {
   const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-  const dataSource = ds.cloneWithRows(['Profile', 'Nations', 'Private messaging', 'Townhall', 'Jurisdiction', 'Settings']);
+  const dataSource = ds.cloneWithRows([
+    {
+      label: 'Profile',
+      screen: SCREEN_TYPES.WELCOME,
+    },
+    {
+      label: 'Nations',
+      screen: SCREEN_TYPES.NATIONS,
+    },
+    {
+      label: 'Private messaging',
+      screen: SCREEN_TYPES.WELCOME,
+    },
+    {
+      label: 'Townhall',
+      screen: SCREEN_TYPES.WELCOME,
+    },
+    {
+      label: 'Jurisdiction',
+      screen: SCREEN_TYPES.WELCOME,
+    },
+    {
+      label: 'Settings',
+      screen: SCREEN_TYPES.WELCOME,
+    },
+  ]);
 
   return (
     <ListView
@@ -14,13 +40,18 @@ function MainMenu(props) {
       onTouchEnd={() => props.onClosed()}
       dataSource={dataSource}
       contentContainerStyle={styles.menuItem}
-      renderRow={rowData => (<Text style={styles.menuText}>{rowData}</Text>)}
+      renderRow={rowData => (
+        <Text style={styles.menuText} onTouchEnd={() => props.onItemClicked(rowData.screen)}>
+          {rowData.label}
+        </Text>
+      )}
     />
   );
 }
 
 MainMenu.propTypes = {
   onClosed: PropTypes.func.isRequired,
+  onItemClicked: PropTypes.func.isRequired,
 };
 
 export default MainMenu;

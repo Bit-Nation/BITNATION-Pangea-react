@@ -11,6 +11,7 @@ import reducer from '../reducers';
 import Main from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
+import Nations from '../components/Nations';
 
 
 const store = createStore(
@@ -27,6 +28,23 @@ class MobileApp extends React.Component {
     this.props.dispatch(changeScreen(nextScreen));
   }
 
+  getCurrentScreen() {
+    switch (this.props.currentScreen) {
+      case SCREEN_TYPES.MAIN:
+        return (
+          <Home />
+        );
+      case SCREEN_TYPES.NATIONS:
+        return (
+          <Nations />
+        );
+      default:
+        return (<WelcomeScreen
+          onChangeScreenHandler={() => this.onChangeScreenHandler()}
+        />);
+    }
+  }
+
   openMenu() {
     this.props.dispatch(openDrawer());
   }
@@ -36,11 +54,7 @@ class MobileApp extends React.Component {
   }
 
   render() {
-    const currentScreen = (this.props.currentScreen === SCREEN_TYPES.WELCOME) ?
-      (<WelcomeScreen
-        onChangeScreenHandler={() => this.onChangeScreenHandler()}
-      />) :
-      <Home />;
+    const currentScreen = this.getCurrentScreen();
 
     return (
       <Provider store={store}>
@@ -48,6 +62,7 @@ class MobileApp extends React.Component {
           onClosed={() => this.closeMenu()}
           onOpen={() => this.openMenu()}
           isDrawerOpen={this.props.isDrawerOpen}
+          onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
         >
           {currentScreen}
         </Main>

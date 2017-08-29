@@ -15,6 +15,7 @@ function Main(props) {
       content={
         <MainMenu
           onClosed={() => props.onClosed()}
+          onItemClicked={screen => props.onItemClicked(screen)}
         />
       }
     >
@@ -45,13 +46,13 @@ function Main(props) {
         />
       </View>
     </Drawer >
-
   );
 }
 
 Main.propTypes = {
   onOpen: PropTypes.func.isRequired,
   onClosed: PropTypes.func.isRequired,
+  onItemClicked: PropTypes.func.isRequired,
   isDrawerOpen: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
 };

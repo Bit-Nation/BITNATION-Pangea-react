@@ -8,4 +8,5 @@ export const APP_STATUS = {
 export const SCREEN_TYPES = {
   WELCOME: 'WELCOME',
   MAIN: 'MAIN',
+  NATIONS: 'NATIONS',
 };

@@ -9,6 +9,7 @@ describe('<Main />', () => { // eslint-disable-line no-undef
     const main = shallow(<Main
       onClosed={() => {}}
       onOpen={() => {}}
+      onItemClicked={() => {}}
       isDrawerOpen={false}
     >
       <View />
