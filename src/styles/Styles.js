@@ -32,6 +32,8 @@ export default StyleSheet.create({
     top: 10,
     left: 40,
     fontSize: 20,
+    color: 'white',
+    backgroundColor: 'transparent',
     flex: 3,
   },
   mainMenu: {
@@ -47,10 +49,10 @@ export default StyleSheet.create({
     fontSize: 25,
   },
   logo: {
-    top: 100,
+    top: 250,
     left: 0,
-    width: 300,
-    height: 350,
+    width: 100,
+    height: 100,
   },
   home: {
     flex: 1,
@@ -68,13 +70,19 @@ export default StyleSheet.create({
   nationsDataLeftText: {
     fontSize: 25,
     flex: 3,
+    backgroundColor: 'transparent',
+    color: 'white',
   },
   nationsDataRightText: {
     fontSize: 25,
     flex: 1,
+    backgroundColor: 'transparent',
+    color: 'white',
   },
   nationsDataSubText: {
     fontSize: 15,
+    color: 'white',
+    backgroundColor: 'transparent',
   },
   nationsColumn: {
     flexDirection: 'column',

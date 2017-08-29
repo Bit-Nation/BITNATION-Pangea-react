@@ -3,7 +3,7 @@ import { View, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Styles from '../styles/Styles';
-import logo from '../images/logo.jpg';
+import logo from '../images/logo.png';
 
 import { SCREEN_TYPES } from '../constants/status_types';
 

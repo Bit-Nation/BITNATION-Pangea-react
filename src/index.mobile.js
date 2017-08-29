@@ -3,8 +3,9 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import { createStore, applyMiddleware } from 'redux';
-import Counters from './containers/MobileApp';
+import MobileApp from './containers/MobileApp';
 import reducers from './reducers';
+import { SCREEN_TYPES } from './constants/status_types';
 
 
 const store = createStore(
@@ -14,7 +15,10 @@ const store = createStore(
 
 const Main = () => (
   <Provider store={store}>
-    <Counters />
+    <MobileApp
+      currentScreen={SCREEN_TYPES.WELCOME}
+      isDrawerOpen={false}
+    />
   </Provider>
 );
 
