@@ -8,13 +8,18 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   menuButton: {
-    flex: 1,
+    width: 20,
+    height: 20,
+    top: 13,
+    left: 5,
   },
   chatButton: {
     flex: 1,
+    top: 13,
   },
-  settingsButton: {
-    flex: 3,
+  holonsButton: {
+    flex: 1,
+    top: 13,
   },
   topBar: {
     position: 'absolute',
@@ -25,6 +30,7 @@ export default StyleSheet.create({
   },
   title: {
     top: 10,
+    left: 40,
     fontSize: 20,
     flex: 3,
   },

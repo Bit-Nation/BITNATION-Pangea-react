@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, TouchableHighlight } from 'react-native';
 import PropTypes from 'prop-types';
 import Drawer from 'react-native-drawer';
-import { MaterialIcons } from '@expo/vector-icons';
 
 import Styles from '../styles/Styles';
 import MainMenu from '../components/MainMenu';
+
+import menuIcon from '../images/menu.png';
+import messagesIcon from '../images/messages.png';
+import holonsIcon from '../images/holons.png';
 
 
 function Main(props) {
@@ -21,28 +24,31 @@ function Main(props) {
     >
       {props.children}
       <View style={Styles.topBar}>
-        <MaterialIcons.Button
-          name="menu"
-          backgroundColor="transparent"
-          color="#010101"
-          size={32}
-          style={Styles.menuButton}
+        <TouchableHighlight onPress={() => props.onOpen()}>
+          <View>
+            <Image
+              resizeMode="contain"
+              resizeMethod="resize"
+              source={menuIcon}
+              style={Styles.menuButton}
+              onPress={() => props.onOpen()}
+            />
+          </View>
+        </TouchableHighlight>
+        <Text style={Styles.title}>Pangea</Text>
+        <Image
+          resizeMode="contain"
+          resizeMethod="resize"
+          source={messagesIcon}
+          style={Styles.chatButton}
           onPress={() => props.onOpen()}
         />
-        <Text style={Styles.title}>Pangea</Text>
-        <MaterialIcons.Button
-          name="chat"
-          backgroundColor="transparent"
-          color="#010101"
-          style={Styles.chatButton}
-          size={32}
-        />
-        <MaterialIcons.Button
-          name="settings"
-          backgroundColor="transparent"
-          color="#010101"
-          style={Styles.settingsButton}
-          size={32}
+        <Image
+          resizeMode="contain"
+          resizeMethod="resize"
+          source={holonsIcon}
+          style={Styles.holonsButton}
+          onPress={() => props.onOpen()}
         />
       </View>
     </Drawer >
