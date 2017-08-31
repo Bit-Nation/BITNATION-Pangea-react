@@ -71,17 +71,17 @@ export default StyleSheet.create({
     fontSize: 25,
     flex: 3,
     backgroundColor: 'transparent',
-    color: 'white',
+    color: '#3590d6',
   },
   nationsDataRightText: {
     fontSize: 25,
     flex: 1,
     backgroundColor: 'transparent',
-    color: 'white',
+    color: '#3590d6',
   },
   nationsDataSubText: {
     fontSize: 15,
-    color: 'white',
+    color: '#787878',
     backgroundColor: 'transparent',
   },
   nationsColumn: {
