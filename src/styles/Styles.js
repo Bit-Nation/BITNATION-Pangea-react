@@ -7,6 +7,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  pointIcon: {
+    width: 20,
+    height: 20,
+    top: 6,
+  },
   menuButton: {
     width: 20,
     height: 20,

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, ListView, View } from 'react-native';
+import { Text, ListView, View, TouchableHighlight, Image } from 'react-native';
 import Styles from '../styles/Styles';
-
+import pointIcon from '../images/point.png';
 
 function Nations() {
   const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -29,6 +29,16 @@ function Nations() {
             <Text style={Styles.nationsDataRightText}>
               {rowData.reputation}
             </Text>
+            <TouchableHighlight onPress={() => {}}>
+              <View>
+                <Image
+                  resizeMode="contain"
+                  resizeMethod="resize"
+                  source={pointIcon}
+                  style={Styles.pointIcon}
+                />
+              </View>
+            </TouchableHighlight>
           </View>
           <Text style={Styles.nationsDataSubText}>{rowData.type}</Text>
         </View>
