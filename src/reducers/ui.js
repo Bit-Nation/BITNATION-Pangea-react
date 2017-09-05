@@ -3,7 +3,8 @@ import { SCREEN_TYPES } from '../constants/status_types';
 
 const initialState = {
   isDrawerOpen: false,
-  currentScreen: SCREEN_TYPES.WELCOME
+  currentScreen: SCREEN_TYPES.WELCOME,
+  title: 'Pangea',
 };
 
 export default (state = initialState, action) => {
@@ -23,6 +24,12 @@ export default (state = initialState, action) => {
         ...state,
         currentScreen: action.nextScreen,
       };
+    case UI_ACTIONS.CHANGE_TITLE: {
+      return {
+        ...state,
+        title: action.title,
+      };
+    }
     default:
       return state;
   }

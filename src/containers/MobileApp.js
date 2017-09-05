@@ -5,7 +5,7 @@ import { connect, Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import { startApp } from '../actions/core';
-import { openDrawer, closeDrawer, changeScreen } from '../actions/ui';
+import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
 import { SCREEN_TYPES } from '../constants/status_types';
 import reducer from '../reducers';
 import Main from '../components/Main';
@@ -26,6 +26,13 @@ class MobileApp extends React.Component {
 
   onChangeScreenHandler(nextScreen) {
     this.props.dispatch(changeScreen(nextScreen));
+
+    let title = 'Pangea';
+    if (nextScreen === SCREEN_TYPES.NATIONS) {
+      title = 'Nations';
+    }
+
+    this.props.dispatch(changeTitle(title));
   }
 
   getCurrentScreen() {
@@ -63,6 +70,7 @@ class MobileApp extends React.Component {
           onOpen={() => this.openMenu()}
           isDrawerOpen={this.props.isDrawerOpen}
           onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
+          title={this.props.title}
         >
           {currentScreen}
         </Main>
@@ -75,12 +83,14 @@ MobileApp.propTypes = {
   dispatch: PropTypes.func.isRequired,
   isDrawerOpen: PropTypes.bool.isRequired,
   currentScreen: PropTypes.oneOf(Object.values(SCREEN_TYPES)).isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   appStatus: state.core.appStatus,
   isDrawerOpen: state.ui.isDrawerOpen,
   currentScreen: state.ui.currentScreen,
+  title: state.ui.title,
 });
 
 export default connect(mapStateToProps)(MobileApp);

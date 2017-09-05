@@ -44,7 +44,7 @@ function Main(props) {
               />
             </View>
           </TouchableHighlight>
-          <Text style={Styles.title}>Pangea</Text>
+          <Text style={Styles.title}>{props.title}</Text>
           <Image
             resizeMode="contain"
             resizeMethod="resize"
@@ -71,6 +71,7 @@ Main.propTypes = {
   onItemClicked: PropTypes.func.isRequired,
   isDrawerOpen: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Main;
