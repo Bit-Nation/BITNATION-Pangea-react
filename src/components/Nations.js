@@ -1,20 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, ListView, View, TouchableHighlight, Image } from 'react-native';
 import Styles from '../styles/Styles';
 import pointIcon from '../images/point.png';
 
-function Nations() {
+function Nations(props) {
   const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-  const dataSource = ds.cloneWithRows([{
-    name: 'Bitnation',
-    type: 'Holacracy',
-    reputation: 500,
-  },
-  {
-    name: 'Mordor',
-    type: 'Dictatorship',
-    reputation: -100,
-  }]);
+  const dataSource = ds.cloneWithRows(props.nations);
 
   return (
     <ListView
@@ -29,7 +21,7 @@ function Nations() {
             <Text style={Styles.nationsDataRightText}>
               {rowData.reputation}
             </Text>
-            <TouchableHighlight onPress={() => {}}>
+            <TouchableHighlight onPress={() => props.onClickNationHandler(rowData)}>
               <View>
                 <Image
                   resizeMode="contain"
@@ -46,6 +38,15 @@ function Nations() {
       }
     />
   );
+}
+
+Nations.propTypes = {
+  nations: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    reputation: PropTypes.number.isRequired,
+  })).isRequired,
+  onClickNationHandler: PropTypes.func.isRequired,
 }
 
 export default Nations;

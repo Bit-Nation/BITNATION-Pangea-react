@@ -6,12 +6,14 @@ import { createStore, applyMiddleware } from 'redux';
 
 import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
+import { setCurrentNation } from '../actions/nations';
 import { SCREEN_TYPES } from '../constants/status_types';
 import reducer from '../reducers';
 import Main from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
 import Nations from '../components/Nations';
+import Nation from '../components/Nation';
 
 
 const store = createStore(
@@ -35,6 +37,11 @@ class MobileApp extends React.Component {
     this.props.dispatch(changeTitle(title));
   }
 
+  onClickNationHandler(nation) {
+    this.props.dispatch(setCurrentNation(nation));
+    this.props.dispatch(changeScreen(SCREEN_TYPES.NATION));
+  }
+
   getCurrentScreen() {
     switch (this.props.currentScreen) {
       case SCREEN_TYPES.MAIN:
@@ -43,7 +50,16 @@ class MobileApp extends React.Component {
         );
       case SCREEN_TYPES.NATIONS:
         return (
-          <Nations />
+          <Nations
+            onClickNationHandler={nation => this.onClickNationHandler(nation)}
+            nations={this.props.nations}
+          />
+        );
+      case SCREEN_TYPES.NATION:
+        return (
+          <Nation
+            nation={this.props.nation}
+          />
         );
       default:
         return (<WelcomeScreen
@@ -84,6 +100,16 @@ MobileApp.propTypes = {
   isDrawerOpen: PropTypes.bool.isRequired,
   currentScreen: PropTypes.oneOf(Object.values(SCREEN_TYPES)).isRequired,
   title: PropTypes.string.isRequired,
+  nations: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    reputation: PropTypes.number.isRequired,
+  })).isRequired,
+  nation: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    reputation: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -91,6 +117,8 @@ const mapStateToProps = state => ({
   isDrawerOpen: state.ui.isDrawerOpen,
   currentScreen: state.ui.currentScreen,
   title: state.ui.title,
+  nations: state.nations.nations,
+  nation: state.nations.nation,
 });
 
 export default connect(mapStateToProps)(MobileApp);

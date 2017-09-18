@@ -9,4 +9,5 @@ export const SCREEN_TYPES = {
   WELCOME: 'WELCOME',
   MAIN: 'MAIN',
   NATIONS: 'NATIONS',
+  NATION: 'NATION',
 };

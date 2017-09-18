@@ -92,4 +92,17 @@ export default StyleSheet.create({
   nationsColumn: {
     flexDirection: 'column',
   },
+  nationDetails: {
+    backgroundColor: 'transparent',
+    color: '#3590d6',
+    fontSize: 20,
+    left: 10,
+    flex: 3,
+  },
+  nationDetailsRight: {
+    backgroundColor: 'transparent',
+    color: '#787878',
+    fontSize: 13,
+    flex: 1,
+  },
 });
