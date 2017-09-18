@@ -11,6 +11,7 @@ describe('<Main />', () => { // eslint-disable-line no-undef
       onOpen={() => {}}
       onItemClicked={() => {}}
       isDrawerOpen={false}
+      title="Test"
     >
       <View />
     </Main>);
@@ -26,6 +27,7 @@ describe('<Main />', () => { // eslint-disable-line no-undef
       onOpen={() => {}}
       onItemClicked={() => {}}
       isDrawerOpen
+      title="Test"
     >
       <View />
     </Main>);
