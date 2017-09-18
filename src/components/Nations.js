@@ -47,6 +47,6 @@ Nations.propTypes = {
     reputation: PropTypes.number.isRequired,
   })).isRequired,
   onClickNationHandler: PropTypes.func.isRequired,
-}
+};
 
 export default Nations;
