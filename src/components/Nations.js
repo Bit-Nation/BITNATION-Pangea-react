@@ -14,14 +14,14 @@ function Nations(props) {
       contentContainerStyle={Styles.nationsDataItem}
       renderRow={rowData => (
         <View style={Styles.nationsColumn}>
-          <View style={Styles.nationsRow}>
-            <Text style={Styles.nationsDataLeftText}>
-              {rowData.name}
-            </Text>
-            <Text style={Styles.nationsDataRightText}>
-              {rowData.reputation}
-            </Text>
-            <TouchableHighlight onPress={() => props.onClickNationHandler(rowData)}>
+          <TouchableHighlight onPress={() => props.onClickNationHandler(rowData)}>
+            <View style={Styles.nationsRow}>
+              <Text style={Styles.nationsDataLeftText}>
+                {rowData.name}
+              </Text>
+              <Text style={Styles.nationsDataRightText}>
+                {rowData.reputation}
+              </Text>
               <View>
                 <Image
                   resizeMode="contain"
@@ -30,8 +30,8 @@ function Nations(props) {
                   style={Styles.pointIcon}
                 />
               </View>
-            </TouchableHighlight>
-          </View>
+            </View>
+          </TouchableHighlight>
           <Text style={Styles.nationsDataSubText}>{rowData.type}</Text>
         </View>
       )
