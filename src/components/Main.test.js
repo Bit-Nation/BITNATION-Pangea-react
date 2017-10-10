@@ -4,8 +4,10 @@ import { View } from 'react-native';
 
 import Main from './Main';
 
-describe('<Main />', () => { // eslint-disable-line no-undef
-  it('should contain the welcome screen', () => { // eslint-disable-line no-undef
+/* eslint-env jest */
+
+describe('<Main />', () => {
+  it('should contain the welcome screen', () => {
     const main = shallow(<Main
       onClosed={() => {}}
       onOpen={() => {}}
@@ -15,13 +17,13 @@ describe('<Main />', () => { // eslint-disable-line no-undef
     >
       <View />
     </Main>);
-    expect(main.length).toBe(1); // eslint-disable-line no-undef
+    expect(main.length).toBe(1);
     const mainMenu = main.find('Drawer').first();
     const open = mainMenu.prop('open');
-    expect(open).toBeFalsy(); // eslint-disable-line no-undef
+    expect(open).toBeFalsy();
   });
 
-  it('should contain the menu', () => { // eslint-disable-line no-undef
+  it('should contain the menu', () => {
     const main = shallow(<Main
       onClosed={() => {}}
       onOpen={() => {}}
@@ -31,9 +33,9 @@ describe('<Main />', () => { // eslint-disable-line no-undef
     >
       <View />
     </Main>);
-    expect(main.length).toBe(1); // eslint-disable-line no-undef
+    expect(main.length).toBe(1);
     const mainMenu = main.find('Drawer').first();
     const open = mainMenu.prop('open');
-    expect(open).toBeTruthy(); // eslint-disable-line no-undef
+    expect(open).toBeTruthy();
   });
 });
