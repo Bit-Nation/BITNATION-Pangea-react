@@ -4,6 +4,7 @@
   "dependencies": {
     "@expo/vector-icons": "^5.1.0",
     "expo": "^19.0.1",
+    "panthalassa-ts": "git+https://github.com/Bit-Nation/BITNATION-Panthalassa-TS.git#panthalassa_api",
     "prop-types": "^15.5.10",
     "react": "^16.0.0-alpha.12",
     "react-dom": "^16.0.0-alpha.12",
