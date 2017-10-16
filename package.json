@@ -46,6 +46,9 @@
     ]
   },
   "jest": {
+    "bail": true,
+    "collectCoverage": true,
+    "collectCoverageFrom" : ["src/**/*.{js}", "App.js"],
     "unmockedModulePathPatterns": [
       "node_modules",
       "@expo"
@@ -53,6 +56,7 @@
     "transformIgnorePatterns": [
       "/!node_modules\\/\\@expo"
     ],
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "verbose": true
   }
 }
