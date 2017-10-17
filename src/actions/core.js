@@ -1,6 +1,6 @@
 import { CORE_ACTIONS } from '../constants/action_types';
 
-export function startApp() {
+export default function startApp() {
   return (dispatch) => {
     dispatch({
       type: CORE_ACTIONS.LOADING,
@@ -13,4 +13,4 @@ export function startApp() {
       });
     }, 2000);
   };
-};
+}
