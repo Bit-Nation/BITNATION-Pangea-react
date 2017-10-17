@@ -15,8 +15,10 @@
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.11",
     "react-test-renderer": "^16.0.0-alpha.12",
+    "readable-stream": "^1.0.33",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "stream-browserify": "^1.0.0",
     "string_decoder": "^0.10.31"
   },
   "scripts": {
@@ -27,7 +29,7 @@
     "android": "react-native run-android",
     "test": "node node_modules/jest/bin/jest.js",
     "eject-native": "react-native-scripts eject",
-    "postinstall": "rn-nodeify --install 'crypto,streams,string_decoder,process' --hack",
+    "postinstall": "rn-nodeify --install 'crypto,stream,string_decoder,process,vm' --hack && react-native link",
     "clear-cache": "rm -rf $TMPDIR/react-*"
   },
   "devDependencies": {
@@ -60,9 +62,23 @@
     "preset": "jest-expo"
   },
   "react-native": {
-    "crypto": "react-native-crypto"
+    "crypto": "react-native-crypto",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify",
+    "vm": "vm-browserify"
   },
   "browser": {
-    "crypto": "react-native-crypto"
+    "crypto": "react-native-crypto",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify",
+    "vm": "vm-browserify"
   }
 }
