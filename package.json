@@ -5,16 +5,20 @@
     "@expo/vector-icons": "^5.1.0",
     "expo": "^19.0.1",
     "panthalassa-ts": "git+https://github.com/Bit-Nation/BITNATION-Panthalassa-TS.git#panthalassa_api",
+    "process": "^0.11.10",
     "prop-types": "^15.5.10",
     "react": "^16.0.0-alpha.12",
     "react-dom": "^16.0.0-alpha.12",
     "react-native": "0.46.1",
+    "react-native-crypto": "^2.1.1",
     "react-native-drawer": "^2.4.0",
+    "react-native-randombytes": "^3.0.0",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.11",
     "react-test-renderer": "^16.0.0-alpha.12",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "string_decoder": "^0.10.31"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -25,7 +29,9 @@
     "ios": "react-native-scripts ios",
     "android": "react-native-scripts android",
     "test": "node node_modules/jest/bin/jest.js",
-    "eject-native": "react-native-scripts eject"
+    "eject-native": "react-native-scripts eject",
+    "postinstall": "rn-nodeify --install 'crypto,streams,string_decoder,process' --hack",
+    "clear-cache": "rm -rf $TMPDIR/react-*"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",
@@ -39,7 +45,8 @@
     "jest-expo": "^20.0.0",
     "react-native-mock": "^0.3.1",
     "react-native-scripts": "^1.1.0",
-    "redux-mock-store": "^1.2.3"
+    "redux-mock-store": "^1.2.3",
+    "rn-nodeify": "^8.2.0"
   },
   "babel": {
     "presets": [
@@ -55,5 +62,11 @@
       "/!node_modules\\/\\@expo"
     ],
     "preset": "jest-expo"
+  },
+  "react-native": {
+    "crypto": "react-native-crypto"
+  },
+  "browser": {
+    "crypto": "react-native-crypto"
   }
 }

@@ -1,3 +1,4 @@
+import './shim';
 import React, { Component } from 'react';
 import * as panthalassa from 'panthalassa-ts';
 import Main from './src/index.mobile';
