@@ -1,8 +1,10 @@
 {
-    "expo": {
-        "name": "Bitnation",
-        "slug": "bitnation",
-        "sdkVersion": "19.0.0",
-        "version": "0.0.1"
-    }
+  "expo": {
+    "name": "Bitnation",
+    "slug": "bitnation",
+    "sdkVersion": "19.0.0",
+    "version": "0.0.1"
+  },
+  "name": "pangea",
+  "displayName": "pangea"
 }

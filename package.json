@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "dependencies": {
     "@expo/vector-icons": "^5.1.0",
-    "expo": "^19.0.1",
     "panthalassa-ts": "git+https://github.com/Bit-Nation/BITNATION-Panthalassa-TS.git#panthalassa_api",
     "process": "^0.11.10",
     "prop-types": "^15.5.10",
@@ -20,14 +19,12 @@
     "redux-thunk": "^2.2.0",
     "string_decoder": "^0.10.31"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-native start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
     "start-native": "react-native-scripts start",
-    "ios": "react-native-scripts ios",
-    "android": "react-native-scripts android",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
     "test": "node node_modules/jest/bin/jest.js",
     "eject-native": "react-native-scripts eject",
     "postinstall": "rn-nodeify --install 'crypto,streams,string_decoder,process' --hack",
@@ -44,7 +41,6 @@
     "jest": "^20.0.4",
     "jest-expo": "^20.0.0",
     "react-native-mock": "^0.3.1",
-    "react-native-scripts": "^1.1.0",
     "redux-mock-store": "^1.2.3",
     "rn-nodeify": "^8.2.0"
   },
