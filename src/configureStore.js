@@ -7,16 +7,16 @@ import DevTools from './components/common/DevTools';
 
 const loggerMiddleware = createLogger({ collapsed: true, duration: true });
 
+// InitialState can be fetched from server (SSR)
 export default function configureStore(initialState) {
   let middlewares = [
     thunk,
   ];
-  const isDevelopment = process.env.NODE_ENV === 'development';
 
   /**
    * Libs for DEVELOPMENT only
    */
-  if (isDevelopment) {
+  if (process.env.NODE_ENV === 'development') {
     middlewares.push(loggerMiddleware);
   }
 
@@ -27,7 +27,7 @@ export default function configureStore(initialState) {
       applyMiddleware(
         ...middlewares,
       ),
-      isDevelopment ? DevTools.instrument() : f => f,
+      process.env.REACT_APP_DEV_TOOLS === 'true' ? DevTools.instrument() : f => f,
     ),
   );
 

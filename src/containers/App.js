@@ -26,7 +26,7 @@ class App extends Component {
           {this.props.appStatus === APP_STATUS.STARTING && 'Starting...'}
           {this.props.appStatus === APP_STATUS.RUNNING && 'Working!'}
         </p>
-        {process.env.NODE_ENV !== 'production' ? <DevTools /> : null}
+        {process.env.REACT_APP_DEV_TOOLS === 'true' ? <DevTools /> : null}
       </div>
     );
   }
