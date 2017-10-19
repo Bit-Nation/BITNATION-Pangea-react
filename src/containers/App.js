@@ -6,7 +6,7 @@ import logo from '../images/logo.jpg';
 import '../styles/App.css';
 import { APP_STATUS } from '../constants/status_types';
 import { startApp } from '../actions/core';
-
+import DevTools from '../components/common/DevTools';
 
 class App extends Component {
   componentDidMount() {
@@ -22,10 +22,11 @@ class App extends Component {
           <h3>The Internet of Sovereignty</h3>
         </div>
         <p className="App-intro">
-          {this.props.appStatus === APP_STATUS.INACTIVE && "Inactive..."}
-          {this.props.appStatus === APP_STATUS.STARTING && "Starting..."}
-          {this.props.appStatus === APP_STATUS.RUNNING && "Working!"}
+          {this.props.appStatus === APP_STATUS.INACTIVE && 'Inactive...'}
+          {this.props.appStatus === APP_STATUS.STARTING && 'Starting...'}
+          {this.props.appStatus === APP_STATUS.RUNNING && 'Working!'}
         </p>
+        {process.env.REACT_APP_DEV_TOOLS === 'true' ? <DevTools /> : null}
       </div>
     );
   }

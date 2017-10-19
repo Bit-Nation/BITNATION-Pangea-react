@@ -13,4 +13,4 @@ export function startApp() {
       });
     }, 2000);
   };
-};
+}
