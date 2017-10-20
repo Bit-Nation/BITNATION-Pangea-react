@@ -4,14 +4,14 @@
   "dependencies": {
     "@expo/vector-icons": "^5.1.0",
     "expo": "^19.0.1",
-    "prop-types": "^15.5.10",
-    "react": "^16.0.0-alpha.12",
-    "react-dom": "^16.0.0-alpha.12",
-    "react-native": "0.46.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-native": "^0.49.3",
     "react-native-drawer": "^2.4.0",
     "react-redux": "^5.0.6",
-    "react-scripts": "1.0.11",
-    "react-test-renderer": "^16.0.0-alpha.12",
+    "react-scripts": "^1.0.14",
+    "react-test-renderer": "^16.0.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
@@ -22,26 +22,27 @@
     "eject": "react-scripts eject",
     "eject-native": "react-native-scripts eject",
     "ios": "react-native-scripts ios",
-    "lint": "node node_modules/eslint/bin/eslint.js --ext .js src/ --cache",
+    "lint": "eslint --ext .js src/ --cache",
     "start": "react-scripts start",
     "start-native": "react-native-scripts start",
-    "test": "cross-env NODE_ENV='testing' node node_modules/jest/bin/jest.js",
-    "test-watch": "cross-env NODE_ENV='testing' node node_modules/jest/bin/jest.js --no-cache --watch",
-    "test-coverage": "cross-env NODE_ENV='testing' node node_modules/jest/bin/jest.js --coverage"
+    "test": "jest",
+    "test-watch": "jest --no-cache --watch",
+    "test-coverage": "jest --coverage"
   },
   "devDependencies": {
-    "babel-jest": "^20.0.3",
-    "cross-env": "^5.1.0",
-    "enzyme": "^2.9.1",
-    "eslint": "^4.4.1",
+    "babel-jest": "^21.2.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "eslint": "^4.9.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.2.1",
-    "jest": "^20.0.4",
-    "jest-expo": "^20.0.0",
+    "jest": "^21.2.1",
+    "jest-expo": "^22.0.0",
     "react-native-mock": "^0.3.1",
     "react-native-scripts": "^1.1.0",
+    "react-test-renderer": "^16.0.0",
     "redux-devtools": "^3.4.0",
     "redux-devtools-dock-monitor": "^1.1.2",
     "redux-devtools-log-monitor": "^1.3.0",
@@ -60,6 +61,11 @@
       "src/**/*.{js}",
       "App.js"
     ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "<rootDir>/src/_mocks_/styleMock.js",
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/src/_mocks_/fileMock.js"
+    },
+    "preset": "jest-expo",
     "setupFiles": [
       "<rootDir>/src/_tests_/setup-before-after.js"
     ],
@@ -67,7 +73,6 @@
     "transformIgnorePatterns": [
       "/!node_modules\\/\\@expo"
     ],
-    "preset": "jest-expo",
     "unmockedModulePathPatterns": [
       "node_modules",
       "@expo"
