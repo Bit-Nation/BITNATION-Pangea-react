@@ -21,25 +21,25 @@ const store = createStore(
   applyMiddleware(thunk),
 );
 
-class MobileApp extends React.Component {
+export class MobileApp extends React.Component {
   componentDidMount() {
-    this.props.dispatch(startApp());
+    this.props.startApp();
   }
 
   onChangeScreenHandler(nextScreen) {
-    this.props.dispatch(changeScreen(nextScreen));
+    this.props.changeScreen(nextScreen);
 
     let title = 'Pangea';
     if (nextScreen === SCREEN_TYPES.NATIONS) {
       title = 'Nations';
     }
 
-    this.props.dispatch(changeTitle(title));
+    this.props.changeTitle(title);
   }
 
   onClickNationHandler(nation) {
-    this.props.dispatch(setCurrentNation(nation));
-    this.props.dispatch(changeScreen(SCREEN_TYPES.NATION));
+    this.props.setCurrentNation(nation);
+    this.props.changeScreen(SCREEN_TYPES.NATION);
   }
 
   getCurrentScreen() {
@@ -69,11 +69,11 @@ class MobileApp extends React.Component {
   }
 
   openMenu() {
-    this.props.dispatch(openDrawer());
+    this.props.openDrawer();
   }
 
   closeMenu() {
-    this.props.dispatch(closeDrawer());
+    this.props.closeDrawer();
   }
 
   render() {
@@ -96,7 +96,6 @@ class MobileApp extends React.Component {
 }
 
 MobileApp.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   isDrawerOpen: PropTypes.bool.isRequired,
   currentScreen: PropTypes.oneOf(Object.values(SCREEN_TYPES)).isRequired,
   title: PropTypes.string.isRequired,
@@ -110,15 +109,27 @@ MobileApp.propTypes = {
     type: PropTypes.string.isRequired,
     reputation: PropTypes.number.isRequired,
   }).isRequired,
+  startApp: PropTypes.func.isRequired,
+  changeScreen: PropTypes.func.isRequired,
+  changeTitle: PropTypes.func.isRequired,
+  setCurrentNation: PropTypes.func.isRequired,
+  openDrawer: PropTypes.func.isRequired,
+  closeDrawer: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+
+export default connect(state => ({
   appStatus: state.core.appStatus,
   isDrawerOpen: state.ui.isDrawerOpen,
   currentScreen: state.ui.currentScreen,
   title: state.ui.title,
   nations: state.nations.nations,
   nation: state.nations.nation,
-});
-
-export default connect(mapStateToProps)(MobileApp);
+}), {
+  startApp,
+  changeScreen,
+  changeTitle,
+  setCurrentNation,
+  openDrawer,
+  closeDrawer,
+})(MobileApp);

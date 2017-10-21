@@ -57,6 +57,7 @@
   },
   "jest": {
     "bail": true,
+    "testEnvironment": "jsdom",
     "collectCoverageFrom": [
       "src/**/*.{js}",
       "App.js"
