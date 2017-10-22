@@ -20,14 +20,14 @@
     "android": "react-native-scripts android",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "eject-native": "react-native-scripts eject",
+    "eject:native": "react-native-scripts eject",
     "ios": "react-native-scripts ios",
     "lint": "eslint --ext .js src/ --cache",
     "start": "react-scripts start",
-    "start-native": "react-native-scripts start",
+    "start:native": "react-native-scripts start",
     "test": "jest",
-    "test-watch": "jest --no-cache --watch",
-    "test-coverage": "jest --coverage"
+    "test:watch": "jest --no-cache --watch",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
     "babel-jest": "^21.2.0",
