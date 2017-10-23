@@ -40,19 +40,19 @@ Easy as that, now you can test the app on your phone.
 
 ## Commands
 
-`start`: Start web app in development mode
-
-`start:native`: Start mobile app in development mode
-
-`ios`: Run app on IOS simulator
-
 `android`: Run app on Android simulator
 
-`eject`: Eject project
+`build`: Build web app
+
+`build:serve`: Open simple http server from dist/ directory
 
 `eject:native`: Eject Native project
 
-`build`: Build and watch app
+`ios`: Run app on IOS simulator
+
+`start`: Start web app in development mode
+
+`start:native`: Start mobile app in development mode
 
 `test`: Run app tests
 
