@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers/index';
 import DevTools from './components/common/DevTools';
 
-const loggerMiddleware = createLogger({ collapsed: true, duration: true });
+export const loggerMiddleware = createLogger({ collapsed: true, duration: true });
 
 // InitialState can be fetched from server (SSR)
 export default function configureStore(initialState) {

@@ -5,7 +5,7 @@ const initialState = {
   appStatus: APP_STATUS.INACTIVE,
 };
 
-export default (state = initialState, action) => {
+export default (state = initialState, action = {}) => {
   switch (action.type) {
     case CORE_ACTIONS.LOADING:
       return {

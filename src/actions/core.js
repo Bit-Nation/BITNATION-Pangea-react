@@ -2,15 +2,17 @@ import { CORE_ACTIONS } from '../constants/action_types';
 
 export function startApp() {
   return (dispatch) => {
-    dispatch({
-      type: CORE_ACTIONS.LOADING,
-    });
-
-    // TODO: Do real startup stuff and delete the code below
-    setTimeout(() => {
+    return new Promise((resolve) => {
       dispatch({
-        type: CORE_ACTIONS.LOADED,
+        type: CORE_ACTIONS.LOADING,
       });
-    }, 2000);
+
+      // TODO: Do real startup stuff and delete the code below
+      setTimeout(() => {
+        resolve(dispatch({
+          type: CORE_ACTIONS.LOADED,
+        }));
+      }, 2000);
+    })
   };
 }
