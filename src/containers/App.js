@@ -6,6 +6,7 @@ import logo from '../images/logo.jpg';
 import '../styles/App.css';
 import { APP_STATUS } from '../constants/status_types';
 import { startApp } from '../actions/core';
+
 const DevTools = process.env.REACT_APP_DEV_TOOLS === 'true' ? require('../components/common/DevTools').default : () => {};
 
 export class App extends Component {
