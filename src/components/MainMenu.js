@@ -33,7 +33,7 @@ export const menuItems = [
 
 export function renderItem(row, onTouchEnd) {
   return (
-    <Text style={styles.menuText} onTouchEnd={onTouchEnd(row.screen)}>
+    <Text style={styles.menuText} onTouchEnd={() => onTouchEnd(row.screen)}>
       {row.label}
     </Text>
   );

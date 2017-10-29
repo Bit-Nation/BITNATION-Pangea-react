@@ -61,7 +61,7 @@ function Main(props) {
           />
         </View>
       </Image>
-    </Drawer >
+    </Drawer>
   );
 }
 

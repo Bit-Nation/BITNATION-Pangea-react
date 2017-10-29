@@ -6,11 +6,12 @@ import logo from '../images/logo.jpg';
 import '../styles/App.css';
 import { APP_STATUS } from '../constants/status_types';
 import { startApp } from '../actions/core';
-import DevTools from '../components/common/DevTools';
 
-class App extends Component {
+const DevTools = process.env.REACT_APP_DEV_TOOLS === 'true' ? require('../components/common/DevTools').default : () => {};
+
+export class App extends Component {
   componentDidMount() {
-    this.props.dispatch(startApp());
+    this.props.startApp();
   }
 
   render() {
@@ -34,11 +35,11 @@ class App extends Component {
 
 App.propTypes = {
   appStatus: PropTypes.string.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  startApp: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+export default connect(state => ({
   appStatus: state.core.appStatus,
-});
-
-export default connect(mapStateToProps)(App);
+}), {
+  startApp,
+})(App);

@@ -1,3 +1,4 @@
+/* eslint global-require: 0 */
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -5,11 +6,11 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers/index';
 import DevTools from './components/common/DevTools';
 
-const loggerMiddleware = createLogger({ collapsed: true, duration: true });
+export const loggerMiddleware = createLogger({ collapsed: true, duration: true });
 
 // InitialState can be fetched from server (SSR)
 export default function configureStore(initialState) {
-  let middlewares = [
+  const middlewares = [
     thunk,
   ];
 
