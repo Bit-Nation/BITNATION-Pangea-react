@@ -1,25 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import thunk from 'redux-thunk';
-import { connect, Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { connect } from 'react-redux';
 
 import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
 import { setCurrentNation } from '../actions/nations';
 import { SCREEN_TYPES } from '../constants/status_types';
-import reducer from '../reducers';
 import Main from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
 import Nations from '../components/Nations';
 import Nation from '../components/Nation';
-
-
-const store = createStore(
-  reducer,
-  applyMiddleware(thunk),
-);
 
 export class MobileApp extends React.Component {
   componentDidMount() {
@@ -27,14 +18,16 @@ export class MobileApp extends React.Component {
   }
 
   onChangeScreenHandler(nextScreen) {
-    this.props.changeScreen(nextScreen);
+    if (this.props.currentScreen !== nextScreen) {
+      this.props.changeScreen(nextScreen);
 
-    let title = 'Pangea';
-    if (nextScreen === SCREEN_TYPES.NATIONS) {
-      title = 'Nations';
+      let title = 'Pangea';
+      if (nextScreen === SCREEN_TYPES.NATIONS) {
+        title = 'Nations';
+      }
+
+      this.props.changeTitle(title);
     }
-
-    this.props.changeTitle(title);
   }
 
   onClickNationHandler(nation) {
@@ -80,17 +73,15 @@ export class MobileApp extends React.Component {
     const currentScreen = this.getCurrentScreen();
 
     return (
-      <Provider store={store}>
-        <Main
-          onClosed={() => this.closeMenu()}
-          onOpen={() => this.openMenu()}
-          isDrawerOpen={this.props.isDrawerOpen}
-          onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
-          title={this.props.title}
-        >
-          {currentScreen}
-        </Main>
-      </Provider>
+      <Main
+        onClosed={() => this.closeMenu()}
+        onOpen={() => this.openMenu()}
+        isDrawerOpen={this.props.isDrawerOpen}
+        onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
+        title={this.props.title}
+      >
+        {currentScreen}
+      </Main>
     );
   }
 }

@@ -8,10 +8,11 @@ import MobileAppContainer from './containers/MobileApp';
 import reducers from './reducers';
 import { SCREEN_TYPES } from './constants/status_types';
 
-
 const store = createStore(
   reducers,
-  applyMiddleware(thunk),
+  applyMiddleware(
+    thunk,
+  ),
 );
 
 const Main = () => (
