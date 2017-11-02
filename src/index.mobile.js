@@ -19,7 +19,6 @@ const store = createStore(
 const Main = () => (
   <Provider store={store}>
     <MobileAppContainer
-      currentScreen={SCREEN_TYPES.WELCOME}
       isDrawerOpen={false}
     />
   </Provider>

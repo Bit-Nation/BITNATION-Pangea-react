@@ -13,15 +13,11 @@ import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
 import Nations from '../components/Nations';
 import Nation from '../components/Nation';
+import SignUp from '../components/SignUp';
+import Login from '../components/Login';
+import AccountMain from '../components/account/Main';
 
 export class MobileApp extends React.Component {
-  async componentWillMount() {
-    await Expo.Font.loadAsync({
-      'Roboto': require('native-base/Fonts/Roboto.ttf'),
-      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-    });
-  }
-
   componentDidMount() {
     this.props.startApp();
   }
@@ -47,9 +43,7 @@ export class MobileApp extends React.Component {
   getCurrentScreen() {
     switch (this.props.currentScreen) {
       case SCREEN_TYPES.MAIN:
-        return (
-          <Home />
-        );
+        return (<Home />);
       case SCREEN_TYPES.NATIONS:
         return (
           <Nations
@@ -61,10 +55,15 @@ export class MobileApp extends React.Component {
         return (<Nation
           nation={this.props.nation}
         />);
+      case SCREEN_TYPES.SIGN_UP:
+        return (<SignUp />);
+      case SCREEN_TYPES.ACCOUNT:
+        return (<AccountMain />);
       default:
-        return (<WelcomeScreen
-          onChangeScreenHandler={() => this.onChangeScreenHandler()}
-        />);
+        return (<Login />);
+        // return (<WelcomeScreen
+        //   onChangeScreenHandler={() => this.onChangeScreenHandler()}
+        // />);
     }
   }
 
