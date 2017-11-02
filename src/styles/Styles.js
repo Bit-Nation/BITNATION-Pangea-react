@@ -20,11 +20,9 @@ export default StyleSheet.create({
   },
   chatButton: {
     flex: 1,
-    top: 13,
   },
   holonsButton: {
     flex: 1,
-    top: 13,
   },
   topBar: {
     position: 'absolute',
@@ -104,5 +102,11 @@ export default StyleSheet.create({
     color: '#787878',
     fontSize: 13,
     flex: 1,
+  },
+  loginForm: {
+    backgroundColor: '#fff',
+    paddingBottom: 0,
+    marginBottom: 0,
+    paddingTop: 10,
   },
 });

@@ -1,15 +1,19 @@
 import React from 'react';
-import { Container, Form, Input, Button, Label } from 'native-base';
+import { Container, Form, Input, Button, Label, InputGroup } from 'native-base';
 
 function AccountMain(props) {
   return (
-    <Container>
-      <Form>
+    <Form>
+      <InputGroup>
         <Label>Name</Label>
         <Input />
-        <Button>Save</Button>
-      </Form>
-    </Container>
+      </InputGroup>
+      <InputGroup>
+        <Label>Description</Label>
+        <Input />
+      </InputGroup>
+      <Button>Save</Button>
+    </Form>
   );
 }
 

@@ -1,19 +1,24 @@
 import React from 'react';
-import { Container, Form, Input, Button, Text } from 'native-base';
+import { Container, Content, Form, Input, Button, Text, Item, H1 } from 'native-base';
 import { connect } from 'react-redux';
 import Styles from '../styles/Styles';
 
 function Login(props) {
   return (
-    <Container style={Styles.container}>
-      <Form>
-        <Input label="Username" />
-        <Input label="Password" />
-        <Button style={{ marginBottom: 20 }} primary>
-          <Text>Login</Text>
-        </Button>
-      </Form>
-    </Container>
+    <Form style={Styles.loginForm}>
+      <Item>
+        <H1>Login</H1>
+      </Item>
+      <Item>
+        <Input placeholder="Username" />
+      </Item>
+      <Item last>
+        <Input placeholder="Password" />
+      </Item>
+      <Button style={{ marginBottom: 20 }} primary block>
+        <Text>Login</Text>
+      </Button>
+    </Form>
   );
 };
 
