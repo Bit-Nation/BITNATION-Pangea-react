@@ -1,4 +1,5 @@
 import { LOGIN, LOGOUT } from '../constants/auth';
+import { ToastAndroid } from 'react-native';
 
 export function login(username, password) {
   return {
@@ -8,6 +9,9 @@ export function login(username, password) {
         username,
         password,
       },
+    },
+    done: () => {
+      ToastAndroid.show('Login was success', ToastAndroid.SHORT);
     },
   };
 }

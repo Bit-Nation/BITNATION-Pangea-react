@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Expo from 'expo';
+import { ToastAndroid } from 'react-native';
 
 import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
@@ -38,6 +39,11 @@ export class MobileApp extends React.Component {
   onClickNationHandler(nation) {
     this.props.setCurrentNation(nation);
     this.props.changeScreen(SCREEN_TYPES.NATION);
+  }
+
+  onDecryptHandler(keyString) {
+    this.props.closeAuthDialog();
+    ToastAndroid.show('Decrypt success.', ToastAndroid.SHORT);
   }
 
   getCurrentScreen() {
@@ -86,7 +92,7 @@ export class MobileApp extends React.Component {
         onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
         title={this.props.title}
         isAuthPromptOpen={this.props.events.authDialogVisible}
-        onAuthPromptSubmit={() => this.props.closeAuthDialog()}
+        onAuthPromptSubmit={(key) => this.onDecryptHandler(key)}
       >
         {currentScreen}
       </Main>

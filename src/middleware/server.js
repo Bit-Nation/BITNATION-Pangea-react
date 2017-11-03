@@ -9,6 +9,8 @@ const serverMiddleware = store => next => action => {
 
   const { type, message, params } = server;
 
+  console.log('Server params:', server);
+
   // return serverRequest.send(type, message, params)
   //   .then((response) => {
   //     return next({
@@ -24,6 +26,10 @@ const serverMiddleware = store => next => action => {
   //       error,
   //     });
   //   });
+
+  if (action.done && typeof action.done === 'function') {
+    action.done();
+  }
 
   return next({
     ...action,

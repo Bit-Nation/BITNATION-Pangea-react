@@ -13,7 +13,7 @@ import messagesIcon from '../images/messages.png';
 import holonsIcon from '../images/holons.png';
 import background from '../images/blue_background.png';
 
-function Main(props) {
+function Main(props) {  
   return (
     <Container>
       <Drawer
@@ -33,10 +33,10 @@ function Main(props) {
             height: null,
           }}
         >
-          <Header>
+          <Header style={{ backgroundColor: 'transparent' }}>
             <Left>
               <Button transparent onPress={() => props.onOpen()}>
-                <Icon name="menu" />
+                <Icon style={{ color: '#2973AB' }} name="menu" />
               </Button>
             </Left>
             <Body>
@@ -67,6 +67,7 @@ function Main(props) {
               onSubmit={(value) => props.onAuthPromptSubmit(value)}
               onChangeText={(value) => console.log('value', value)}
               visible={props.isAuthPromptOpen}
+              textInputProps={{ secureTextEntry: true }}
             />
             {props.children}
           </Content>

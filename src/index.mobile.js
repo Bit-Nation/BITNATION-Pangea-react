@@ -6,13 +6,14 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import MobileAppContainer from './containers/MobileApp';
 import reducers from './reducers';
-import { SCREEN_TYPES } from './constants/status_types';
 import { AUTH_DIALOG_OPEN } from './constants/events';
+import serverMiddleware from './middleware/server';
 
 const store = createStore(
   reducers,
   applyMiddleware(
     thunk,
+    serverMiddleware,
   ),
 );
 

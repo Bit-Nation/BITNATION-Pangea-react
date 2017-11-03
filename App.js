@@ -1,3 +1,4 @@
+/* eslint global-require: 0 */
 import React, { Component } from 'react';
 import Expo from 'expo';
 
@@ -15,9 +16,9 @@ export default class App extends Component { // eslint-disable-line react/prefer
 
   componentWillMount() {
     Expo.Font.loadAsync({
-      'Roboto': require('native-base/Fonts/Roboto.ttf'),
-      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-      'Ionicons': require('@expo/vector-icons/fonts/Ionicons.ttf'),
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      Ionicons: require('@expo/vector-icons/fonts/Ionicons.ttf'),
     }).then(() => {
       this.setState({
         loading: false,
@@ -28,8 +29,6 @@ export default class App extends Component { // eslint-disable-line react/prefer
   render() {
     const { loading } = this.state;
 
-    return (
-      loading ? null : <Main />
-    );
+    return (loading ? null : <Main />);
   }
 }
