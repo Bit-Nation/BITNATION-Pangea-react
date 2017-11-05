@@ -9,10 +9,12 @@ import reducers from './reducers';
 import { AUTH_DIALOG_OPEN } from './constants/events';
 import serverMiddleware from './middleware/server';
 
+import ethMock from './ethMock';
+
 const store = createStore(
   reducers,
   applyMiddleware(
-    thunk,
+    thunk.withExtraArgument(ethMock),
     serverMiddleware,
   ),
 );
