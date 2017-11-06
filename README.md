@@ -5,14 +5,14 @@ This is the repository for the Pangea Jurisdiction frontend.
 
 ## Table of Contents
 
-- [Building](#building)
+- [Running](#running)
 - [Testing](#testing)
 - [Commands](#commands)
 - [Folder Structure](#folder-structure)
 - [Development Guidelines](#development-guidelines)
 
 
-## Building
+## Running
 
 We use docker for development, so make sure that you get the latest version (should be at least 17.04).
 
@@ -60,17 +60,17 @@ Easy as that, now you can test the app on your phone.
 
 `test:coverage` Run tests and create coverage directory with information about code test coverage
 
-
 ## Folder structure
 
 The folder structure is as follwoing:
 - src
-  _mocks_: Folder with mocks needed in tests
-  _tests_: Application tests
+  - _mocks_: Folder with mocks needed in tests
+  - _tests_: Application tests
   - actions: The action creators
   - components: [Stateless functional components](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc), only UI logic
   - containers: [React Components](https://facebook.github.io/react/docs/react-component.html) including business logic
   - images: Icons/images
+  - middleware: Redux middlewares
   - reducers: Reducers Redux functions
   - services: API wrappers
   - styles: css and js stylesheets
@@ -82,4 +82,4 @@ The folder structure is as follwoing:
 
   We are following the [Airbnb Guidelines](https://github.com/airbnb/javascript)
   
-  There is already a *.eslintrc.json* file containing the specifications, you just need to integrate it on your favorite editor.
+  There is already a *.eslintrc.json* file containing the specifications and *.editorconfig* containing IDE style guide, you just need to integrate it on your favorite editor.
