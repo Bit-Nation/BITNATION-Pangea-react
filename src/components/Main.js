@@ -14,7 +14,7 @@ import messagesIcon from '../images/messages.png';
 import holonsIcon from '../images/holons.png';
 import background from '../images/blue_background.png';
 
-function Main(props) {
+export function Main(props) {
   let encryptionPassword = null;
 
   return (

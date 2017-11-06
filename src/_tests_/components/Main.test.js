@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { View } from 'react-native';
 
-import Main from '../../components/Main';
+import { Main } from '../../components/Main';
 
 /* eslint-env jest */
 
@@ -14,6 +14,7 @@ describe('<Main />', () => {
       onItemClicked={() => {}}
       isDrawerOpen={false}
       title="Test"
+      events={{ authDialogVisible: true }}
     >
       <View />
     </Main>);
@@ -30,6 +31,7 @@ describe('<Main />', () => {
       onItemClicked={() => {}}
       isDrawerOpen
       title="Test"
+      events={{ authDialogVisible: true }}
     >
       <View />
     </Main>);
