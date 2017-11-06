@@ -21,7 +21,7 @@ Setup instructions:
 2. Run ```docker-compose up -d```to build and start all the containers (wil take a few minutes).
 3. Run ```docker-compose exec pangea bash``` to enter into the "pangea" container (it's the container where node is running).
 4. Run ```npm install``` to get all the dependencies.
-5. Run ```npm run start:native``` and wait 2 - 4 minutes. A QR-Code should be printed.
+5. Run ```npm run start:native``` and wait 1 - 4 minutes (depends on OS). A QR-Code should be printed.
 6. Now you just need to scan the QR-Code using the [Expo app](https://expo.io/) while connected in the same network as your computer.
 
 ### Tips and tricks

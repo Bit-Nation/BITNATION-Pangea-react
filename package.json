@@ -10,6 +10,7 @@
     "react-dom": "^16.0.0",
     "react-native": "^0.48.4",
     "react-native-drawer": "^2.4.0",
+    "react-native-loading-spinner-overlay": "^0.5.2",
     "react-native-prompt": "https://github.com/lightman73/react-native-prompt.git",
     "react-navigation": "^1.0.0-beta.15",
     "react-redux": "^5.0.6",

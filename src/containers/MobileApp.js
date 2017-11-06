@@ -6,7 +6,7 @@ import Expo from 'expo';
 import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
 import { setCurrentNation } from '../actions/nations';
-import { SCREEN_TYPES } from '../constants/status_types';
+import { SCREEN_TYPES, APP_STATUS } from '../constants/status_types';
 import Main from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
@@ -15,6 +15,7 @@ import Nation from '../components/Nation';
 import SignUp from '../components/SignUp';
 import Login from '../components/Login';
 import AccountMain from '../components/account/Main';
+import Loader from '../components/Loader';
 
 export class MobileApp extends React.Component {
   componentDidMount() {
@@ -58,11 +59,12 @@ export class MobileApp extends React.Component {
         return (<SignUp />);
       case SCREEN_TYPES.ACCOUNT:
         return (<AccountMain />);
-      default:
+      case SCREEN_TYPES.LOGIN:
         return (<Login />);
-        // return (<WelcomeScreen
-        //   onChangeScreenHandler={() => this.onChangeScreenHandler()}
-        // />);
+      default:
+        return (<WelcomeScreen
+          onChangeScreenHandler={() => this.onChangeScreenHandler()}
+        />);
     }
   }
 
@@ -85,6 +87,7 @@ export class MobileApp extends React.Component {
         onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
         title={this.props.title}
       >
+        <Loader visible={this.props.appStatus === APP_STATUS.STARTING} />
         {currentScreen}
       </Main>
     );
@@ -111,6 +114,7 @@ MobileApp.propTypes = {
   setCurrentNation: PropTypes.func.isRequired,
   openDrawer: PropTypes.func.isRequired,
   closeDrawer: PropTypes.func.isRequired,
+  appStatus: PropTypes.string.isRequired,
 };
 
 

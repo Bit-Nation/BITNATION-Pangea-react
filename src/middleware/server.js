@@ -13,6 +13,10 @@ const serverMiddleware = store => next => action => {
 
   // return serverRequest.send(type, message, params)
   //   .then((response) => {
+  //     if (action.done && typeof action.done === 'function') {
+  //       return action.done();
+  //     }
+  //      
   //     return next({
   //       ...action,
   //       server: undefined,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableHighlight } from 'react-native';
+import { Image } from 'react-native';
 import PropTypes from 'prop-types';
 import Drawer from 'react-native-drawer';
 import Prompt from 'react-native-prompt';
@@ -10,7 +10,6 @@ import Styles from '../styles/Styles';
 import MainMenu from '../components/MainMenu';
 import { decryptStorage, closeAuthDialog } from '../actions/events';
 
-import menuIcon from '../images/menu.png';
 import messagesIcon from '../images/messages.png';
 import holonsIcon from '../images/holons.png';
 import background from '../images/blue_background.png';

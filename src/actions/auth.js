@@ -1,18 +1,23 @@
-import { LOGIN, LOGOUT } from '../constants/auth';
 import { ToastAndroid } from 'react-native';
 
+import { LOGIN, LOGOUT } from '../constants/auth';
+import { changeScreen } from '../actions/ui';
+import { SCREEN_TYPES } from '../constants/status_types';
+
 export function login(username, password) {
-  return {
-    type: LOGIN,
-    server: {
-      params: {
-        username,
-        password,
+  return (dispatch) => {
+    return dispatch({
+      type: LOGIN,
+      server: {
+        params: {
+          username,
+          password,
+        },
       },
-    },
-    done: () => {
-      ToastAndroid.show('Login was success', ToastAndroid.SHORT);
-    },
+      done: () => {
+        dispatch(changeScreen(SCREEN_TYPES.WELCOME));
+      },
+    });
   };
 }
 

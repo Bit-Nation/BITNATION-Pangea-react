@@ -8,6 +8,7 @@ import MobileAppContainer from './containers/MobileApp';
 import reducers from './reducers';
 import { AUTH_DIALOG_OPEN } from './constants/events';
 import serverMiddleware from './middleware/server';
+import { SCREEN_TYPES } from './constants/status_types';
 
 import ethMock from './ethMock';
 
@@ -23,15 +24,9 @@ const Main = () => (
   <Provider store={store}>
     <MobileAppContainer
       isDrawerOpen={false}
+      currentScreen={SCREEN_TYPES.LOGIN}
     />
   </Provider>
 );
-
-// @TODO: Change it for real event stream
-setTimeout(() => {
-  store.dispatch({
-    type: AUTH_DIALOG_OPEN,
-  });
-}, 2000);
 
 export default Main;
