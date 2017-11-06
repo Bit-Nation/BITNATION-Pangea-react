@@ -15,6 +15,7 @@ describe('<Main />', () => {
       isDrawerOpen={false}
       title="Test"
       events={{ authDialogVisible: true }}
+      decryptStorage={() => {}}
     >
       <View />
     </Main>);
@@ -32,6 +33,7 @@ describe('<Main />', () => {
       isDrawerOpen
       title="Test"
       events={{ authDialogVisible: true }}
+      decryptStorage={() => {}}
     >
       <View />
     </Main>);
