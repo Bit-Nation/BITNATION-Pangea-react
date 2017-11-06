@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Content, Form, Input, Button, Text, Item } from 'native-base';
+import { Form, Input, Button, Text, Item } from 'native-base';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Styles from '../styles/Styles';
 import { login } from '../actions/auth';
 
-function Login(props) {
+export function Login(props) {
   let username = null;
   let password = null;
 
