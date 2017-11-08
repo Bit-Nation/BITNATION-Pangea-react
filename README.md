@@ -1,6 +1,6 @@
 # Bitnation Pangea
 
-> Pangea is a fullstack blockchain powered jurisdiction. It's created by BITNATION, the world's first Decentralized Borderless Voluntary Nation (DBVN). This reposity contains the ios/android interface.
+> Pangea is a fullstack blockchain jurisdiction. It's created by BITNATION, the world's first Decentralized Borderless Voluntary Nation (DBVN). This reposity contains the ios/android interface.
 
 ## Table of Contents
 
