@@ -1,7 +1,6 @@
 # Bitnation Pangea
 
-This is the repository for the Pangea Jurisdiction frontend. 
-
+> Pangea is bitnations jurisdiction on the blockchain. This reposity contains the ios/android interface.
 
 ## Table of Contents
 
