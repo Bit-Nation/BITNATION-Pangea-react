@@ -26,7 +26,6 @@
     "ios": "react-native run-ios",
     "lint": "eslint --ext .js src/",
     "start": "react-native start",
-    "start:native": "react-native-scripts start",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
