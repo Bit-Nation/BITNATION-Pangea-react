@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "dependencies": {
     "@expo/vector-icons": "^6.1.0",
-    "expo": "^21.0.3",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -20,15 +19,13 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "android": "react-native-scripts android",
+    "android": "react-native run-android",
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
     "eject:native": "react-native-scripts eject",
-    "ios": "react-native-scripts ios",
+    "ios": "react-native run-ios",
     "lint": "eslint --ext .js src/",
-    "start": "react-scripts start",
+    "start": "react-native start",
     "start:native": "react-native-scripts start",
     "test": "jest",
     "test:watch": "jest --watchAll",
@@ -46,7 +43,6 @@
     "jest": "^21.2.1",
     "jest-expo": "^22.0.0",
     "react-native-mock": "^0.3.1",
-    "react-native-scripts": "^1.1.0",
     "react-test-renderer": "^16.0.0",
     "redux-mock-store": "^1.2.3",
     "sinon": "^4.0.1"
