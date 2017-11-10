@@ -29,7 +29,7 @@
     "eject": "react-scripts eject",
     "eject:native": "react-native-scripts eject",
     "ios": "react-native-scripts ios",
-    "lint": "eslint --ext .js src/ --fix",
+    "lint": "eslint --ext .js src/",
     "start": "react-scripts start",
     "start:native": "react-native-scripts start",
     "test": "jest",
