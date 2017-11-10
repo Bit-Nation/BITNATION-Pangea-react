@@ -1,7 +1,7 @@
-import { 
-  AUTH_DIALOG_CLOSE, 
+import {
+  AUTH_DIALOG_CLOSE,
   AUTH_DIALOG_OPEN,
-  DECRYPT, 
+  DECRYPT,
 } from '../constants/events';
 
 export function openAuthDialog() {
@@ -27,7 +27,7 @@ export function decryptStorage(passphrase) {
           key,
         });
         dispatch(closeAuthDialog());
-      })
+      });
     });
-  }
+  };
 }

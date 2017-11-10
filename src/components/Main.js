@@ -17,6 +17,10 @@ import background from '../images/blue_background.png';
 export function Main(props) {
   let encryptionPassword = null;
 
+  const setEncryptionPassword = (value) => {
+    encryptionPassword = value;
+  };
+
   return (
     <Container>
       <Drawer
@@ -43,7 +47,7 @@ export function Main(props) {
               </Button>
             </Left>
             <Body>
-              <Title>Bitnation</Title>
+              <Title>{props.title}</Title>
             </Body>
             <Right>
               <Image
@@ -68,7 +72,7 @@ export function Main(props) {
               placeholder="Enter password to decrypt"
               onCancel={() => props.closeAuthDialog()}
               onSubmit={() => props.decryptStorage(encryptionPassword)}
-              onChangeText={(value) => encryptionPassword = value }
+              onChangeText={value => setEncryptionPassword(value)}
               visible={props.events.authDialogVisible}
               textInputProps={{ secureTextEntry: true }}
             />
@@ -91,13 +95,15 @@ Main.propTypes = {
   events: PropTypes.shape({
     authDialogVisible: PropTypes.bool,
   }).isRequired,
+  closeAuthDialog: PropTypes.func.isRequired,
 };
 
 Main.defaultProps = {
   isAuthPromptOpen: false,
+  title: 'Bitnation',
 };
 
-export default connect((state) => ({
+export default connect(state => ({
   events: state.events,
 }), {
   decryptStorage,

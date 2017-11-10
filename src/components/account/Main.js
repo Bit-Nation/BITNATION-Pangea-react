@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Form, Input, Button, Label, InputGroup } from 'native-base';
+import { Form, Input, Button, Label, InputGroup } from 'native-base';
 
-function AccountMain(props) {
+function AccountMain() {
   return (
     <Form>
       <InputGroup>

@@ -8,7 +8,7 @@ import MobileAppContainer from './containers/MobileApp';
 import reducers from './reducers';
 import { AUTH_DIALOG_OPEN } from './constants/events';
 import serverMiddleware from './middleware/server';
-import { SCREEN_TYPES, APP_STATUS } from './constants/status_types';
+import { SCREEN_TYPES } from './constants/status_types';
 
 import ethMock from './ethMock';
 

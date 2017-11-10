@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, View, Text } from 'native-base';
+import { Container, View } from 'native-base';
 import Spinner from 'react-native-loading-spinner-overlay';
 import PropTypes from 'prop-types';
 

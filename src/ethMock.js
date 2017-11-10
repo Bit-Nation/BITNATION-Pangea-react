@@ -1,12 +1,10 @@
-const listeners = [];
+// const listeners = [];
 
 export default {
-  decryptPrivateKey: (key, reason, topic) => {
-    return key;
-  },
+  decryptPrivateKey: key => key,
   on: (eventName, callback) => {
     setTimeout(() => {
-      callback(new Promise((resolve, reject) => {
+      callback(new Promise((resolve) => {
         resolve('test');
       }));
     }, 1000);

@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Expo from 'expo';
 
 import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
 import { setCurrentNation } from '../actions/nations';
 import { SCREEN_TYPES, APP_STATUS } from '../constants/status_types';
-import Main from '../components/Main';
+import MainScreen from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
 import Nations from '../components/Nations';
 import Nation from '../components/Nation';
 import SignUp from '../components/SignUp';
-import Login from '../components/Login';
+import LoginScreen from '../components/Login';
 import AccountMain from '../components/account/Main';
 import Loader from '../components/Loader';
 
@@ -60,7 +59,7 @@ export class MobileApp extends React.Component {
       case SCREEN_TYPES.ACCOUNT:
         return (<AccountMain />);
       case SCREEN_TYPES.LOGIN:
-        return (<Login />);
+        return (<LoginScreen />);
       default:
         return (<WelcomeScreen
           onChangeScreenHandler={() => this.onChangeScreenHandler()}
@@ -80,7 +79,7 @@ export class MobileApp extends React.Component {
     const currentScreen = this.getCurrentScreen();
 
     return (
-      <Main
+      <MainScreen
         onClosed={() => this.closeMenu()}
         onOpen={() => this.openMenu()}
         isDrawerOpen={this.props.isDrawerOpen}
@@ -89,7 +88,7 @@ export class MobileApp extends React.Component {
       >
         <Loader visible={this.props.appStatus === APP_STATUS.STARTING} />
         {currentScreen}
-      </Main>
+      </MainScreen>
     );
   }
 }

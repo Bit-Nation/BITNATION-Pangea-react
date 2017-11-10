@@ -1,4 +1,5 @@
 /* eslint arrow-parens: 0 */
+/* eslint no-unused-vars: 0 */
 
 const serverMiddleware = store => next => action => {
   const { server } = action;
@@ -7,16 +8,14 @@ const serverMiddleware = store => next => action => {
     return next(action);
   }
 
-  const { type, message, params } = server;
-
-  console.log('Server params:', server);
+  // const { type, message, params } = server;
 
   // return serverRequest.send(type, message, params)
   //   .then((response) => {
   //     if (action.done && typeof action.done === 'function') {
   //       return action.done();
   //     }
-  //      
+  //
   //     return next({
   //       ...action,
   //       server: undefined,
