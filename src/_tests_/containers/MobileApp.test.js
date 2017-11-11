@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import { MobileApp } from '../../containers/MobileApp';
-import { SCREEN_TYPES } from '../../constants/status_types';
+import { SCREEN_TYPES, APP_STATUS } from '../../constants/status_types';
 
 describe('<MobileApp />', () => {
   let wrapper = null;
@@ -27,6 +27,7 @@ describe('<MobileApp />', () => {
         setCurrentNation={() => {}}
         openDrawer={() => {}}
         closeDrawer={() => {}}
+        appStatus={APP_STATUS.RUNNING}
         events={{ authDialogVisible: true }}
       />
     )

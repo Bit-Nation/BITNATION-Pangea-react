@@ -5,13 +5,16 @@ import { connect } from 'react-redux';
 import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
 import { setCurrentNation } from '../actions/nations';
-import { SCREEN_TYPES } from '../constants/status_types';
-import { closeAuthDialog } from '../actions/events';
-import Main from '../components/Main';
+import { SCREEN_TYPES, APP_STATUS } from '../constants/status_types';
+import MainScreen from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
 import Nations from '../components/Nations';
 import Nation from '../components/Nation';
+import SignUp from '../components/SignUp';
+import LoginScreen from '../components/Login';
+import AccountMain from '../components/account/Main';
+import Loader from '../components/Loader';
 
 export class MobileApp extends React.Component {
   componentDidMount() {
@@ -39,9 +42,7 @@ export class MobileApp extends React.Component {
   getCurrentScreen() {
     switch (this.props.currentScreen) {
       case SCREEN_TYPES.MAIN:
-        return (
-          <Home />
-        );
+        return (<Home />);
       case SCREEN_TYPES.NATIONS:
         return (
           <Nations
@@ -53,6 +54,12 @@ export class MobileApp extends React.Component {
         return (<Nation
           nation={this.props.nation}
         />);
+      case SCREEN_TYPES.SIGN_UP:
+        return (<SignUp />);
+      case SCREEN_TYPES.ACCOUNT:
+        return (<AccountMain />);
+      case SCREEN_TYPES.LOGIN:
+        return (<LoginScreen />);
       default:
         return (<WelcomeScreen
           onChangeScreenHandler={() => this.onChangeScreenHandler()}
@@ -72,17 +79,16 @@ export class MobileApp extends React.Component {
     const currentScreen = this.getCurrentScreen();
 
     return (
-      <Main
+      <MainScreen
         onClosed={() => this.closeMenu()}
         onOpen={() => this.openMenu()}
         isDrawerOpen={this.props.isDrawerOpen}
         onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
         title={this.props.title}
-        isAuthPromptOpen={this.props.events.authDialogVisible}
-        onAuthPromptSubmit={() => this.props.closeAuthDialog()}
       >
+        <Loader visible={this.props.appStatus === APP_STATUS.STARTING} />
         {currentScreen}
-      </Main>
+      </MainScreen>
     );
   }
 }
@@ -107,10 +113,7 @@ MobileApp.propTypes = {
   setCurrentNation: PropTypes.func.isRequired,
   openDrawer: PropTypes.func.isRequired,
   closeDrawer: PropTypes.func.isRequired,
-  events: PropTypes.shape({
-    authDialogVisible: PropTypes.bool,
-  }).isRequired,
-  closeAuthDialog: PropTypes.func.isRequired,
+  appStatus: PropTypes.string.isRequired,
 };
 
 
@@ -121,7 +124,6 @@ export default connect(state => ({
   title: state.ui.title,
   nations: state.nations.nations,
   nation: state.nations.nation,
-  events: state.events,
 }), {
   startApp,
   changeScreen,
@@ -129,5 +131,4 @@ export default connect(state => ({
   setCurrentNation,
   openDrawer,
   closeDrawer,
-  closeAuthDialog,
 })(MobileApp);

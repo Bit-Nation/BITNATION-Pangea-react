@@ -5,30 +5,35 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import MobileAppContainer from './containers/MobileApp';
 import reducers from './reducers';
-import { SCREEN_TYPES } from './constants/status_types';
 import { AUTH_DIALOG_OPEN } from './constants/events';
+import serverMiddleware from './middleware/server';
+import { SCREEN_TYPES } from './constants/status_types';
+
+import ethMock from './ethMock';
 
 const store = createStore(
   reducers,
   applyMiddleware(
-    thunk,
+    thunk.withExtraArgument(ethMock),
+    serverMiddleware,
   ),
 );
 
 const Main = () => (
   <Provider store={store}>
     <MobileAppContainer
-      currentScreen={SCREEN_TYPES.WELCOME}
       isDrawerOpen={false}
+      currentScreen={SCREEN_TYPES.LOGIN}
     />
   </Provider>
 );
 
-// @TODO: Change it for real event stream
-setTimeout(() => {
-  store.dispatch({
-    type: AUTH_DIALOG_OPEN,
+ethMock.on('eth:storage-ready', (promise) => {
+  promise.then(() => {
+    store.dispatch({
+      type: AUTH_DIALOG_OPEN,
+    });
   });
-}, 2000);
+});
 
 export default Main;

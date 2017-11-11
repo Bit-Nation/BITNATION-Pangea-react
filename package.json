@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "dependencies": {
     "@expo/vector-icons": "^6.1.0",
+    "native-base": "^2.3.3",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-native": "^0.48.4",
     "react-native-drawer": "^2.4.0",
+    "react-native-loading-spinner-overlay": "^0.5.2",
     "react-native-prompt": "https://github.com/lightman73/react-native-prompt.git",
     "react-navigation": "^1.0.0-beta.15",
     "react-redux": "^5.0.6",
@@ -64,9 +66,9 @@
   },
   "babel": {
     "presets": [
-      "react-native",
       "es2015",
-      "react",      
+      "react",
+      "react-native",    
       "stage-0",
       ["env", {
         "targets": {
@@ -104,8 +106,8 @@
       "<rootDir>/src/_tests_/setup/init.js"
     ],
     "testRegex": "src/_tests_/.*\\.test\\.js",
-    "unmockedModulePathPatterns": [
-      "node_modules"
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|native-base)"      
     ],
     "verbose": true
   }

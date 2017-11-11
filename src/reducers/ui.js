@@ -3,7 +3,7 @@ import { SCREEN_TYPES } from '../constants/status_types';
 
 const initialState = {
   isDrawerOpen: false,
-  currentScreen: SCREEN_TYPES.WELCOME,
+  currentScreen: SCREEN_TYPES.LOGIN,
   title: 'Pangea',
 };
 
