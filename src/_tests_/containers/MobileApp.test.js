@@ -28,6 +28,7 @@ describe('<MobileApp />', () => {
         openDrawer={() => {}}
         closeDrawer={() => {}}
         appStatus={APP_STATUS.RUNNING}
+        events={{ authDialogVisible: true }}
       />
     )
   })

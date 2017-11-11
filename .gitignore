@@ -9,6 +9,9 @@
 # production
 /build
 
+# any build folder in nested structure
+build/
+
 # misc
 .DS_Store
 .env.local
@@ -26,3 +29,6 @@ yarn.log
 .idea/
 
 .eslintcache
+
+temp-ios-directory/
+yarn.lock
