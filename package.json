@@ -66,9 +66,9 @@
   },
   "babel": {
     "presets": [
-      "react-native",
       "es2015",
-      "react",      
+      "react",
+      "react-native",    
       "stage-0",
       ["env", {
         "targets": {
@@ -106,8 +106,8 @@
       "<rootDir>/src/_tests_/setup/init.js"
     ],
     "testRegex": "src/_tests_/.*\\.test\\.js",
-    "unmockedModulePathPatterns": [
-      "node_modules"
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|@shoutem/theme|@shoutem/animation|@shoutem/ui|tcomb-form-native|native-base-shoutem-theme|native-base)"      
     ],
     "verbose": true
   }
