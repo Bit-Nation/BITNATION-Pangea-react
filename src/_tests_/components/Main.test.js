@@ -16,6 +16,7 @@ describe('<Main />', () => {
       title="Test"
       events={{ authDialogVisible: true }}
       decryptStorage={() => {}}
+      closeAuthDialog={() => {}}
     >
       <View />
     </Main>);
@@ -34,6 +35,7 @@ describe('<Main />', () => {
       title="Test"
       events={{ authDialogVisible: true }}
       decryptStorage={() => {}}
+      closeAuthDialog={() => {}}
     >
       <View />
     </Main>);

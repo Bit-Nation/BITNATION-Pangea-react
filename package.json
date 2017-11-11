@@ -107,7 +107,7 @@
     ],
     "testRegex": "src/_tests_/.*\\.test\\.js",
     "transformIgnorePatterns": [
-      "node_modules/(?!react-native|@shoutem/theme|@shoutem/animation|@shoutem/ui|tcomb-form-native|native-base-shoutem-theme|native-base)"      
+      "node_modules/(?!react-native|native-base)"      
     ],
     "verbose": true
   }
