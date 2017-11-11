@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Expo from 'expo';
 
 import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
@@ -15,13 +14,6 @@ import Nations from '../components/Nations';
 import Nation from '../components/Nation';
 
 export class MobileApp extends React.Component {
-  async componentWillMount() {
-    await Expo.Font.loadAsync({
-      'Roboto': require('native-base/Fonts/Roboto.ttf'),
-      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-    });
-  }
-
   componentDidMount() {
     this.props.startApp();
   }
