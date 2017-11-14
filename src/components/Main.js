@@ -15,7 +15,7 @@ import background from '../images/blue_background.png';
 
 import { decryptStorage, closeAuthDialog } from '../actions/events';
 
-function Main(props) {
+export function Main(props) {
   let encryptionPassword = null;
 
   const setEncryptionPassword = (value) => {
