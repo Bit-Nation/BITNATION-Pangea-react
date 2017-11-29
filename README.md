@@ -6,10 +6,10 @@ This is the repository for the Pangea Jurisdiction frontend.
 ## Table of Contents
 
 - [Building](#building)
-- [Testing](#testing)
 - [Commands](#commands)
 - [Folder Structure](#folder-structure)
 - [Development Guidelines](#development-guidelines)
+- [Testing](#testing)
 
 
 ## Building
@@ -21,36 +21,19 @@ Setup instructions:
 2. Run ```docker-compose up -d```to build and start all the containers (wil take a few minutes).
 3. Run ```docker-compose exec pangea bash``` to enter into the "pangea" container (it's the container where node is running).
 4. Run ```npm install``` to get all the dependencies.
-5. Run ```npm run start:native``` and wait 2 - 4 minutes. A QR-Code should be printed.
-6. Now you just need to scan the QR-Code using the [Expo app](https://expo.io/) while connected in the same network as your computer.
+5. Run ```npm run android``` or ```npm run ios``` this will packager and application in `development` mode on your connected device
 
 ### Tips and tricks
 * Stop the containers ```docker-compose stop```
 * Destroy the containers ```docker-compose down```
 
-
-## Testing
-
-You can test the mobile app without cloning the repo and/or building the app yourself.
-You can just download the Expo app to your phone: https://expo.io/
-
-Then go to [this](https://expo.io/@danielfranca/bitnation) page and scan the QR-Code using the [Expo app](https://expo.io/).
-
-Easy as that, now you can test the app on your phone.
-
 ## Commands
 
 `start`: Start web app in development mode
 
-`start:native`: Start mobile app in development mode
-
 `ios`: Run app on IOS simulator
 
 `android`: Run app on Android simulator
-
-`eject`: Eject project
-
-`eject:native`: Eject Native project
 
 `build`: Build and watch app
 
@@ -83,3 +66,5 @@ The folder structure is as follwoing:
   We are following the [Airbnb Guidelines](https://github.com/airbnb/javascript)
   
   There is already a *.eslintrc.json* file containing the specifications, you just need to integrate it on your favorite editor.
+
+## Testing
