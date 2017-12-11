@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableHighlight } from 'react-native';
+import { View, Text, Image, TouchableHighlight, ImageBackground } from 'react-native';
 import PropTypes from 'prop-types';
 import Drawer from 'react-native-drawer';
 import Prompt from 'react-native-prompt';
@@ -14,6 +14,7 @@ import background from '../images/blue_background.png';
 
 function Main(props) {
   return (
+
     <Drawer
       open={props.isDrawerOpen}
       content={
@@ -23,7 +24,7 @@ function Main(props) {
         />
       }
     >
-      <Image
+      <ImageBackground
         source={background}
         style={{
           flex: 1,
@@ -68,7 +69,7 @@ function Main(props) {
             onPress={() => props.onOpen()}
           />
         </View>
-      </Image>
+      </ImageBackground>
     </Drawer>
   );
 }
