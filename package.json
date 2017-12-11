@@ -4,9 +4,9 @@
   "dependencies": {
     "@expo/vector-icons": "^6.1.0",
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
+    "react": "16.0.0",
     "react-dom": "^16.0.0",
-    "react-native": "^0.48.4",
+    "react-native": "0.51.0",
     "react-native-drawer": "^2.4.0",
     "react-native-prompt": "https://github.com/lightman73/react-native-prompt.git",
     "react-navigation": "^1.0.0-beta.15",
@@ -66,14 +66,20 @@
     "presets": [
       "react-native",
       "es2015",
-      "react",      
+      "react",
       "stage-0",
-      ["env", {
-        "targets": {
-          "browsers": ["last 3 versions", "safari >= 8"]
-        },
-        "modules": false
-      }]
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 3 versions",
+              "safari >= 8"
+            ]
+          },
+          "modules": false
+        }
+      ]
     ],
     "plugins": [
       "transform-runtime",
