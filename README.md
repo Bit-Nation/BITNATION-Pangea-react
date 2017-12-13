@@ -4,27 +4,19 @@
 
 ## Table of Contents
 
-- [Building](#building)
+- [Project Setup](#project-setup)
 - [Commands](#commands)
 - [Folder Structure](#folder-structure)
 - [Development Guidelines](#development-guidelines)
 - [Git Workflow](#git-workflow)
 - [Testing](#testing)
 
-## Building
+## Project Setup
 
-We use docker for development, so make sure that you get the latest version (should be at least 17.04).
-
-Setup instructions:
-1. Clone the repository
-2. Run ```docker-compose up -d```to build and start all the containers (wil take a few minutes).
-3. Run ```docker-compose exec pangea bash``` to enter into the "pangea" container (it's the container where node is running).
-4. Run ```npm install``` to get all the dependencies.
-5. Run ```npm run android``` or ```npm run ios``` this will packager and application in `development` mode on your connected device
-
-### Tips and tricks
-* Stop the containers ```docker-compose stop```
-* Destroy the containers ```docker-compose down```
+1. Get [node](https://nodejs.org/en/) (LTS)
+2. Clone this project
+3. Run `npm install`
+4. Run `npm run ios` or `npm run android` to start your project in the simulator
 
 ## Commands
 
