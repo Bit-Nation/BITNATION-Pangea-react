@@ -1,7 +1,6 @@
 # Bitnation Pangea
 
-This is the repository for the Pangea Jurisdiction frontend. 
-
+> Pangea is a fullstack blockchain jurisdiction. It's created by BITNATION, the world's first Decentralized Borderless Voluntary Nation (DBVN). This reposity contains the ios/android interface.
 
 ## Table of Contents
 
@@ -9,8 +8,8 @@ This is the repository for the Pangea Jurisdiction frontend.
 - [Commands](#commands)
 - [Folder Structure](#folder-structure)
 - [Development Guidelines](#development-guidelines)
+- [Git Workflow](#git-workflow)
 - [Testing](#testing)
-
 
 ## Building
 
@@ -66,5 +65,28 @@ The folder structure is as follwoing:
   We are following the [Airbnb Guidelines](https://github.com/airbnb/javascript)
   
   There is already a *.eslintrc.json* file containing the specifications, you just need to integrate it on your favorite editor.
+
+## Git Workflow
+We are using [this](http://nvie.com/posts/a-successful-git-branching-model/) branching model.
+
+### Permanent Branches:
+
+- master (protected, contains last release)
+- development (protected, current development status)
+
+### Commits
+* A commit message should look like this `[git] added .idea to .gitignore`. Make sure that you add a "topic", e.g. `[git]`.
+* Don't make monster commits (commits that contain e.g. 1000 changes in 70 files).
+
+### Branch naming
+* Features: `feature/<feature-name-and-or-issue-number>`.
+* Fix: `fix/<issue-id>`.
+* Hotfix: `hotfix/<issue-id>`.
+
+### Pull Request Proccess
+1. Write tests for the code you added.
+2. Make sure the the CI pass.
+3. Create your pull request.
+4. Request a reviewer (yes, the project the core team too please).
 
 ## Testing
