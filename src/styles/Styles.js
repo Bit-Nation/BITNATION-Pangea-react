@@ -12,46 +12,10 @@ export default StyleSheet.create({
     height: 20,
     top: 6,
   },
-  menuButton: {
-    width: 20,
-    height: 20,
-    top: 13,
-    left: 5,
-  },
-  chatButton: {
-    flex: 1,
-    top: 13,
-  },
-  holonsButton: {
-    flex: 1,
-    top: 13,
-  },
-  topBar: {
-    position: 'absolute',
-    top: 15,
-    left: 0,
-    flexDirection: 'row',
-    flex: 1,
-  },
-  title: {
-    top: 10,
-    left: 40,
-    fontSize: 20,
-    color: 'white',
-    backgroundColor: 'transparent',
-    flex: 3,
-  },
-  mainMenu: {
-    backgroundColor: '#ABABAB',
-  },
   menuItem: {
     justifyContent: 'center',
     flex: 1,
     alignItems: 'center',
-  },
-  menuText: {
-    paddingTop: 15,
-    fontSize: 25,
   },
   logo: {
     top: 250,
