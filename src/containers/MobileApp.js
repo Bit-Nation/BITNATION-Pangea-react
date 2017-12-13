@@ -6,6 +6,7 @@ import { startApp } from '../actions/core';
 import { openDrawer, closeDrawer, changeScreen, changeTitle } from '../actions/ui';
 import { setCurrentNation } from '../actions/nations';
 import { SCREEN_TYPES } from '../constants/status_types';
+import { closeAuthDialog } from '../actions/events';
 import Main from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
@@ -49,11 +50,9 @@ export class MobileApp extends React.Component {
           />
         );
       case SCREEN_TYPES.NATION:
-        return (
-          <Nation
-            nation={this.props.nation}
-          />
-        );
+        return (<Nation
+          nation={this.props.nation}
+        />);
       default:
         return (<WelcomeScreen
           onChangeScreenHandler={() => this.onChangeScreenHandler()}
@@ -79,6 +78,8 @@ export class MobileApp extends React.Component {
         isDrawerOpen={this.props.isDrawerOpen}
         onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
         title={this.props.title}
+        isAuthPromptOpen={this.props.events.authDialogVisible}
+        onAuthPromptSubmit={() => this.props.closeAuthDialog()}
       >
         {currentScreen}
       </Main>
@@ -106,6 +107,10 @@ MobileApp.propTypes = {
   setCurrentNation: PropTypes.func.isRequired,
   openDrawer: PropTypes.func.isRequired,
   closeDrawer: PropTypes.func.isRequired,
+  events: PropTypes.shape({
+    authDialogVisible: PropTypes.bool,
+  }).isRequired,
+  closeAuthDialog: PropTypes.func.isRequired,
 };
 
 
@@ -116,6 +121,7 @@ export default connect(state => ({
   title: state.ui.title,
   nations: state.nations.nations,
   nation: state.nations.nation,
+  events: state.events,
 }), {
   startApp,
   changeScreen,
@@ -123,4 +129,5 @@ export default connect(state => ({
   setCurrentNation,
   openDrawer,
   closeDrawer,
+  closeAuthDialog,
 })(MobileApp);

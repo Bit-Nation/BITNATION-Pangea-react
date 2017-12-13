@@ -27,6 +27,7 @@ describe('<MobileApp />', () => {
         setCurrentNation={() => {}}
         openDrawer={() => {}}
         closeDrawer={() => {}}
+        events={{ authDialogVisible: true }}
       />
     )
   })

@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Image, TouchableHighlight } from 'react-native';
+import { View, Text, Image, TouchableHighlight, ImageBackground } from 'react-native';
 import PropTypes from 'prop-types';
 import Drawer from 'react-native-drawer';
+import Prompt from 'react-native-prompt';
 
 import Styles from '../styles/Styles';
 import MainMenu from '../components/MainMenu';
@@ -11,9 +12,9 @@ import messagesIcon from '../images/messages.png';
 import holonsIcon from '../images/holons.png';
 import background from '../images/blue_background.png';
 
-
 function Main(props) {
   return (
+
     <Drawer
       open={props.isDrawerOpen}
       content={
@@ -23,7 +24,7 @@ function Main(props) {
         />
       }
     >
-      <Image
+      <ImageBackground
         source={background}
         style={{
           flex: 1,
@@ -31,6 +32,14 @@ function Main(props) {
           height: null,
         }}
       >
+        <Prompt
+          title="Encryption password prompt"
+          placeholder="Enter password to decrypt"
+          onCancel={() => props.onAuthPromptSubmit()}
+          onSubmit={(value) => props.onAuthPromptSubmit(value)}
+          onChangeText={(value) => console.log('value', value)}
+          visible={props.isAuthPromptOpen}
+        />
         {props.children}
         <View style={Styles.topBar}>
           <TouchableHighlight onPress={() => props.onOpen()}>
@@ -60,7 +69,7 @@ function Main(props) {
             onPress={() => props.onOpen()}
           />
         </View>
-      </Image>
+      </ImageBackground>
     </Drawer>
   );
 }
@@ -72,6 +81,12 @@ Main.propTypes = {
   isDrawerOpen: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
+  isAuthPromptOpen: PropTypes.bool,
+  onAuthPromptSubmit: PropTypes.func.isRequired,
+};
+
+Main.defaultProps = {
+  isAuthPromptOpen: false,
 };
 
 export default Main;

@@ -9,6 +9,7 @@
 - [Folder Structure](#folder-structure)
 - [Development Guidelines](#development-guidelines)
 - [Git Workflow](#git-workflow)
+- [Testing](#testing)
 
 ## Project Setup
 
@@ -21,15 +22,9 @@
 
 `start`: Start web app in development mode
 
-`start:native`: Start mobile app in development mode
-
 `ios`: Run app on IOS simulator
 
 `android`: Run app on Android simulator
-
-`eject`: Eject project
-
-`eject:native`: Eject Native project
 
 `build`: Build and watch app
 
@@ -85,3 +80,5 @@ We are using [this](http://nvie.com/posts/a-successful-git-branching-model/) bra
 2. Make sure the the CI pass.
 3. Create your pull request.
 4. Request a reviewer (yes, the project the core team too please).
+
+## Testing
