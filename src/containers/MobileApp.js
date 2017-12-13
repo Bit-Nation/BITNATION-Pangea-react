@@ -10,8 +10,6 @@ import { closeAuthDialog } from '../actions/events';
 import Main from '../components/Main';
 import WelcomeScreen from '../components/WelcomeScreen';
 import Home from '../components/Home';
-import Nations from '../components/Nations';
-import Nation from '../components/Nation';
 
 export class MobileApp extends React.Component {
   componentDidMount() {
