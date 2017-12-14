@@ -6,8 +6,9 @@ export const APP_STATUS = {
 };
 
 export const SCREEN_TYPES = {
-  WELCOME: 'WELCOME',
-  MAIN: 'MAIN',
+  LUCY: 'LUCY',
+  CHAT: 'CHAT',
   NATIONS: 'NATIONS',
-  NATION: 'NATION',
+  PROFILE: 'PROFILE',
+  WALLET: 'WALLET',
 };
