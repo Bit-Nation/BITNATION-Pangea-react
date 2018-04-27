@@ -7,11 +7,12 @@ import MobileAppContainer from './containers/MobileApp';
 import reducers from './reducers';
 import { SCREEN_TYPES } from './constants/status_types';
 import { AUTH_DIALOG_OPEN } from './constants/events';
+import ethMock from './ethMock';
 
 const store = createStore(
   reducers,
   applyMiddleware(
-    thunk,
+    thunk.withExtraArgument(ethMock),
   ),
 );
 
@@ -24,11 +25,12 @@ const Main = () => (
   </Provider>
 );
 
-// @TODO: Change it for real event stream
-setTimeout(() => {
-  store.dispatch({
-    type: AUTH_DIALOG_OPEN,
+ethMock.on('eth:storage-ready', (promise) => {
+  promise.then(() => {
+    store.dispatch({
+      type: AUTH_DIALOG_OPEN,
+    });
   });
-}, 2000);
+});
 
 export default Main;

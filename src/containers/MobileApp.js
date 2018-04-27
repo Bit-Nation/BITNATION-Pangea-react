@@ -78,8 +78,6 @@ export class MobileApp extends React.Component {
         isDrawerOpen={this.props.isDrawerOpen}
         onItemClicked={nextScreen => this.onChangeScreenHandler(nextScreen)}
         title={this.props.title}
-        isAuthPromptOpen={this.props.events.authDialogVisible}
-        onAuthPromptSubmit={() => this.props.closeAuthDialog()}
       >
         {currentScreen}
       </Main>
@@ -107,10 +105,6 @@ MobileApp.propTypes = {
   setCurrentNation: PropTypes.func.isRequired,
   openDrawer: PropTypes.func.isRequired,
   closeDrawer: PropTypes.func.isRequired,
-  events: PropTypes.shape({
-    authDialogVisible: PropTypes.bool,
-  }).isRequired,
-  closeAuthDialog: PropTypes.func.isRequired,
 };
 
 
